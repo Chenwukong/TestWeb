@@ -1,0 +1,4 @@
+/* 推荐使用这种 重置标签默认样式 */
+body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+
+img{border:none;}

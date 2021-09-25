@@ -1,0 +1,5 @@
+/* 推荐使用这种 重置标签默认样式 */
+body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+/* 清除ul ol默认序号样式和内外边距 */
+ol,ul{margin:0;padding:0;list-style:none;}
+img{border:none;}

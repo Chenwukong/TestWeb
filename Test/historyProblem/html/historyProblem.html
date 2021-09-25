@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例</title>
+    <link rel="shortcut icon" href="../../realProblem/img/1.jpg.icon.ico">
+    <link rel="stylesheet" href="../css/tiku.css">
+    <style>
+        .loader {
+            position: absolute;
+
+            z-index: 9999;
+            width: 100%;
+            height: 4500px;
+            background: rgb(227, 230, 228);
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .loader-content {
+            position: absolute;
+            top: 300px;
+            left: 750px;
+        }
+
+        .fadeout {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+            }
+        }
+
+        #index {
+            display: inline-block;
+            cursor: pointer;
+            width: 100px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid pink;
+            margin-left: 2px;
+            font-size: 16px;
+            line-height: 50px;
+        }
+
+        button {
+            outline: none;
+            border: none;
+            background-color: white;
+        }
+
+        button a {
+            background-color: lightgreen;
+        }
+
+        #index:hover {
+            box-shadow: 1px 0px 5px 2px pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <img src="../../img/test-img/e4cd0639b5a5c1e164aeff4370ed2365.gif" alt="Loader" class="loader-loader" />
+        </div>
+    </div>
+    <div class="jump" id="top">
+        <div class="tzsy">
+            <button> <a href="../../index/index.html" id="index">首页</a></button>
+        </div>
+        <ul>
+            <li class="tp-one"></li>
+            <li>
+                <h1>题库</h1>
+            </li>
+            <li><a href="#choice">选择题</a></li>
+            <li><a href="#Completion">填空题</a></li>
+            <li><a href="#judge">判断题</a></li>
+            <li><a href="#Practical">实际操作题</a></li>
+            <li class="tp-one"></li>
+        </ul>
+    </div>
+    <div class="content">
+
+        <dl>
+            <dt id="choice"><strong>一.选择题</strong></dt>
+            <dd>
+                <div>
+                    1<br>1 <br>
+                </div>
+            </dd>
+
+            <dt id="Completion"><strong>二.填空题</strong></dt>
+            <dd>
+                <div>
+                    1<br>1
+                </div>
+            </dd>
+            <dt id="judge"><strong>三.判断题</strong></dt>
+            <dd>
+                <div>
+                    1<br>1
+                </div>
+            </dd>
+            <dt id="Practical"><strong>四.实际操作题</strong></dt>
+            <dd>
+                <div>
+                    1<br>1
+                </div>
+            </dd>
+        </dl>
+    </div>
+
+    <ul class="jump-right">
+        <li><a href="#top"><img src="../img/u=3300481934,396663065&fm=26&fmt=auto&gp=0.webp" alt=""></a></li>
+        <li><a href="#choice">选择题</a></li>
+        <li><a href="#Completion">填空题</a></li>
+        <li><a href="#judge">判断题</a></li>
+        <li><a href="#Practical">实际操作题</a></li>
+    </ul>
+
+
+
+
+</body>
+<script>  window.onload = function () {
+        setTimeout(function () {
+            var loader = document.getElementsByClassName("loader")[0];
+            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
+            setTimeout(function () { loader.style.display = "none" }, 1000)
+        }, 2000)
+    }
+</script>
+
+</html>

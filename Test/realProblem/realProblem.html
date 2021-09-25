@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/1.jpg.icon.ico">
+    <title>小分队实操</title>
+    <link rel="stylesheet" href="./rest.css">
+    <style>
+        html,
+        body {
+            height: 99%;
+            background: url(./img/2.jpg) no-repeat center/cover;
+        }
+
+        .animation {
+            position: relative;
+            top: 0px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            /* border: 1px solid red; */
+            /* opacity: 0.8; 会影响子元素看不见 慎用*/
+            transform-style: preserve-3d;
+            /*开启3D盒子*/
+            /* perspective: 1000px; 写3D盒子一定要先开景深 */
+            /* transform: rotateX(40deg) rotateY(100deg); */
+            animation: loog 5s linear infinite;
+            /*盒子3D动画*/
+
+        }
+
+        @keyframes loog {
+
+            /*盒子3D动画*/
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .animation:hover {
+            animation: loog 0.1s linear infinite;
+
+        }
+
+        .animation>li:nth-child(n+1) {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            border-radius: 35px;
+            /* overflow: hidden; */
+        }
+
+        li:hover:nth-of-type(n+1) {
+            /* transform: scale(1.01); */
+            box-shadow: 5px 5px 5px pink;
+
+        }
+
+        .animation>li:nth-of-type(1) {
+            transform: rotateX(90deg) translateZ(25px);
+            background-color: springgreen;
+        }
+
+        .animation>li:nth-of-type(2) {
+            transform: rotateX(90deg) translateZ(-25px);
+
+            background-color: blue;
+        }
+
+        .animation>li:nth-of-type(3) {
+            transform: rotateY(90deg) translateZ(25px);
+
+            background-color: red;
+        }
+
+        .animation>li:nth-of-type(4) {
+            transform: rotateY(90deg) translateZ(-25px);
+
+            background-color: gray;
+        }
+
+        .animation>li:nth-of-type(5) {
+            transform: translateZ(25px);
+            background-color: lightcoral;
+        }
+
+        .animation>li:nth-of-type(6) {
+            transform: translateZ(-25px);
+            background-color: blueviolet;
+        }
+
+        .animation>li>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .welcome {
+            width: 600px;
+            height: 50px;
+            margin: 0px auto;
+        }
+
+        .subject {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-content: space-around;
+            width: 1800px;
+            height: 600px;
+            /* border: 1px solid red; */
+            position: relative;
+            top: 30px;
+            left: 50px;
+            font-size: 20px;
+            text-indent: 1em;
+            line-height: 50px;
+            white-space: normal;
+        }
+
+        .subject>li:nth-of-type(n+1) {
+            width: 550px;
+            height: 280px;
+            background-color: powderblue;
+        }
+
+        .jump {
+
+            position: relative;
+            top: 135px;
+            left: 0px;
+            width: 820px;
+            height: 95px;
+            border: 1px solid red;
+            background: url(./img/4.png) no-repeat center/cover;
+        }
+
+        .jump>a:nth-of-type(n+1) {
+            margin: 30px;
+            width: 100px;
+            height: 50px;
+            color: darkturquoise;
+            display: inline-block;
+            font-size: 20px;
+            text-decoration: none;
+            /*清除下划线*/
+        }
+
+        .jump>a:hover {
+            color: hotpink;
+        }
+
+        .jump>a:nth-of-type(1) {
+            margin-left: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome">
+        <img src="./img/3.png" alt="">
+    </div>
+    <ul class="animation">
+        <li><img src="./img/loog.jpg" alt=""></li>
+        <li><img src="./img/loog.jpg" alt=""></li>
+        <li><img src="./img/loog.jpg" alt=""></li>
+        <li><img src="./img/loog.jpg" alt=""></li>
+        <li><img src="./img/loog.jpg" alt=""></li>
+        <li><img src="./img/loog.jpg" alt=""></li>
+    </ul>
+    <ul class="subject">
+        <li>题目壹：<br>
+            请用flex布局让其子元素正轴和侧轴同时居中。
+        </li>
+        <li>题目贰：<br>
+            用径向渐变画出一个里层为白，外层为黑的圆形
+        </li>
+        <li>题目叁：因为现在学完css了，学js后再针对每周出题</li>
+        <li>题目肆：因为现在学完css了，学js后再针对每周出题</li>
+        <li>题目伍：因为现在学完css了，学js后再针对每周出题</li>
+        <li>题目陆：因为现在学完css了，学js后再针对每周出题</li>
+    </ul>
+    <div class="jump">
+        <a href="../index/index.html">首页</a>
+        <a href="../weekTest/weekTest.html">周考目录</a>
+        <a href="../aboutUs/index.html">关于我们</a>
+        <a href="../answer/answer.html">实操答案</a>
+    </div>
+</body>
+<script>
+
+
+</script>
+
+</html>

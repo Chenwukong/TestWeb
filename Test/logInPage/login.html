@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+    <link rel="stylesheet" href="./cz.css">
+    <style>
+        body {
+            user-select: none;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .loader {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/test-img/shuimo.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .loader-content {
+            position: absolute;
+            top: 300px;
+            left: 750px;
+        }
+
+        .fadeout {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+            }
+        }
+
+
+        /*总体大盒子 视频盒子*/
+        .box1 {
+            width: 100%;
+            height: 100%;
+        }
+
+        /*视频大小位置设置*/
+        video {
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+            z-index: -11;
+
+
+        }
+
+        /*学海图片*/
+        .img {
+            width: 205px;
+            height: 500px;
+            position: absolute;
+            top: 30%;
+            right: 20px;
+            background: url(./img/1.jpg) no-repeat center/cover;
+            z-index: 2;
+        }
+
+        .img:hover {
+            animation: shake 0.2s infinite;
+        }
+
+        /*登录界面设置*/
+        .login-interface {
+            position: absolute;
+            top: 30%;
+            left: 8%;
+            width: 400px;
+            background-color: rgba(244, 213, 201, 0.5);
+            padding: 0px 30px 50px;
+            border-radius: 10px;
+
+        }
+
+        h2 {
+            color: rebeccapurple;
+            margin-top: 20px;
+        }
+
+        /*登录口盒子设置*/
+        .login {
+            margin-top: 40px;
+        }
+
+        /*登录口设置*/
+        .login>input {
+            padding: 0px 20px;
+            width: 350px;
+            height: 50px;
+            color: #4c4c4c;
+            font-size: inherit;
+            background-color: transparent;
+            font-weight: lighter;
+        }
+
+        /*密码口设置*/
+        .mm>input {
+            margin-top: 20px;
+            padding: 0px 20px;
+            width: 350px;
+            height: 50px;
+            color: #4c4c4c;
+            font-size: inherit;
+            background-color: transparent;
+            font-weight: lighter;
+        }
+
+        /*登录按钮*/
+        .login-bth {
+            width: 395px;
+            height: 50px;
+            color: white;
+            background-color: skyblue;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+
+        /*跳转盒子设置*/
+        .register {
+            margin-top: 30px;
+        }
+
+        /*跳转注册设置*/
+        .to-regoster {
+            float: right;
+        }
+
+        .register>a {
+            color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+
+    </div>
+    <div class="box">
+        <video autoplay loop muted>
+            <source src="./video/2366564fa6b83158208eb3181752a8d6_preview.mp4" type="video/mp4">
+        </video>
+        <a href="../index/index.html">
+            <div class="img"></div>
+        </a>
+        <div class="login-interface">
+            <div class="login-head">
+                <h2>欢迎登录</h2>
+            </div>
+
+            <div class="login">
+                <input type="text" placeholder="用户名" id="LogInUserName">
+            </div>
+            <div class="mm">
+                <input type="password" placeholder="密码" id="LogInPassword">
+            </div>
+            <div class="login-button">
+                <button class="login-bth"> 登录</button>
+            </div>
+            <div class=" register">
+                <a href="../index/index.html">返回首页</a>
+                <a href="../regPage/register.html" class="to-regoster">立即注册</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            var loader = document.getElementsByClassName("loader")[0];
+            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
+            setTimeout(function () { loader.style.display = "none" }, 1000)
+        }, 2000)
+    }
+
+    var img = document.querySelector(".img");
+    var video = document.querySelector('video');
+    var inter = document.querySelector(".login-interface")
+    var loader = document.querySelector(".loader");
+    img.addEventListener("mouseenter", function () {
+        loader.style.display = "block";
+        loader.style.opacity = "1";
+    })
+    img.addEventListener("mouseleave", function () {
+        loader.style.display = "none";
+
+    })
+    var LogInUserName = document.querySelector("#LogInUserName");
+    var LogInPassword = document.querySelector("#LogInPassword");
+    var LogBtn = document.querySelector(".login-bth");
+
+    LogBtn.addEventListener("click", function () {
+        localStorage.setItem("LogInUserName", LogInUserName.value);
+        localStorage.setItem("LogInPassword", LogInPassword.value);
+        if (localStorage.getItem('RegUserName') === localStorage.getItem("LogInUserName") && localStorage.getItem('RegPassword') === localStorage.getItem("LogInPassword")) {
+            window.location.href = "../weekTest/weekTest.html";
+        }
+
+    })
+
+
+</script>
+
+</html>

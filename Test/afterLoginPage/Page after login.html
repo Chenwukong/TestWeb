@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎登录</title>
+    <link rel="stylesheet" href="./rest.css">
+    <style>
+        html body {
+            line-height: 1.1;
+            color: #333;
+            font-family: arial;
+            font-size: 20px;
+            height: 100%;
+            background: url(./img/9.jpg) no-repeat center/cover fixed;
+            user-select: none;
+
+        }
+
+        .loader {
+            position: absolute;
+
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background: rgb(244, 240, 237);
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .loader-content {
+            position: absolute;
+            top: 300px;
+            left: 750px;
+        }
+
+        .fadeout {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+            }
+        }
+
+        input,
+        textarea,
+        select {
+            font-size: 100%;
+            font-family: inherit;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        ol,
+        form {
+            margin: 0;
+        }
+
+        h4,
+        h5,
+        h6 {
+            font-size: 1em;
+        }
+
+        ul,
+        ol {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .dynamic {
+            position: relative;
+            top: 72px;
+            left: 422px;
+            font-family: '仿宋gbk';
+            width: 814px;
+            height: 700px;
+            font-size: 30px;
+            line-height: 60px;
+            color: #33CCFF;
+            /* border: 1px solid red; */
+        }
+
+        #aa {
+            position: absolute;
+            top: 0px;
+            left: 78px;
+            width: 700px;
+            height: 700px;
+            /* border:  2px solid blue; */
+        }
+
+        span {
+            color: olivedrab;
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        ul {
+            position: absolute;
+            top: 100px;
+            left: 200px;
+            float: left;
+            width: 190px;
+            height: 526px;
+
+            /* border: 1px solid red; */
+        }
+
+        ul>li>a {
+            text-decoration: none;
+            color: #9999CC;
+        }
+
+        ul>li:nth-child(n+1) {
+            /*子级选择器   n+1选中从1开始所有的子级标签改变元素*/
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+            color: #9999CC;
+            text-align: center;
+            font-weight: bolder;
+            line-height: 90px;
+
+            /* border: 1px solid pink; */
+            /* border-radius: 45%; */
+            /* background: radial-gradient(  #9999CC 50%, 50% ); */
+        }
+
+        ul>li:nth-child(1) {
+            float: left;
+            width: 100%;
+            height: 90px;
+            /* display: none;  */
+            /* border: 1px solid pink; */
+            overflow: hidden;
+            /* transform: dh 2s linear;- */
+
+            transition: 2s;
+        }
+
+        ul>li:nth-child(n+1):hover {
+            /* 让子元素缩小0.5  */
+            transform: scale(0.5);
+        }
+
+        ul>li:nth-child(1):hover img {
+            /*让图片（ Y轴 ）上移-90px ，图片也会缩小0.5 是因为继承了父级的属性   */
+            transition: 2s;
+            transform: translateY(-90px);
+        }
+
+        ul>li:nth-child(2) {
+            float: left;
+            width: 100%;
+            height: 90px;
+            /* display: none; */
+            /* border: 1px solid pink; */
+            overflow: hidden;
+            transition: 2s;
+        }
+
+        ul>li:nth-child(2):hover .two {
+            transition: 2s;
+            transform: translateY(-90px);
+        }
+
+        ul>li:nth-child(3) {
+            float: left;
+            width: 100%;
+            height: 90px;
+            /* display: none; */
+            /* border: 1px solid pink; */
+            overflow: hidden;
+            transition: 2s;
+        }
+
+        ul>li:nth-child(3):hover .three {
+            transition: 2s;
+            transform: translateY(-90px);
+        }
+
+        ul>li:nth-child(4) {
+            float: left;
+            width: 100%;
+            height: 90px;
+            /* border: 1px solid pink; */
+            overflow: hidden;
+            transition: 2s;
+            /* display:none; */
+        }
+
+        ul>li:nth-child(4):hover .four {
+            transition: 2s;
+            transform: translateY(-90px);
+        }
+
+        ul>li>.link>.five>img {
+            width: 120px;
+            height: 90px;
+            margin-left: 5px;
+        }
+
+        ul>li:nth-child(5) {
+            float: left;
+            width: 100%;
+            height: 90px;
+            /* border: 1px solid pink; */
+            overflow: hidden;
+            transition: 2s;
+            /* display:none; */
+        }
+
+        ul>li:nth-child(5):hover .five {
+            transition: 3s;
+            transform: translateY(-90px);
+            width: 120px;
+            height: 90px;
+            /* background-color: #ffffffff; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <img src="../img/test-img/e4cd0639b5a5c1e164aeff4370ed2365.gif" alt="Loader" class="loader-loader" />
+        </div>
+    </div>
+    <div class="dynamic">
+        <pre id="aa"></pre>
+        <div style="display:none" id="we">
+            <!-- 文字渐显示JS做出来我现在也还不会！是CV的等到学会JS在做修改 -->
+            <span>欢迎登录web前端小分队内部考试网站:</span>
+            &nbsp;&nbsp;对于学习学习我们秉承勤奋、刻苦、钻研、不认输的态度, 对于梦想我们就像，
+            河水流动悄无声息，不知疲惫，因为它有自己的方向；山路蜿蜒曲折，千回百转永
+            无尽头，因为它有自己的目标；雄鹰终会展翅翱翔，巨人终会踏步远行，沿着河流
+            顺着山路追寻年轻的梦。
+            &nbsp;&nbsp;努力奋斗的意义,是因为我们想给自己一个牛逼的机会，趁自己还年轻，
+            必须给自己一个交代，因为我们相信梦想，相信遗憾比失败更可怕。
+
+
+            ————————————Welcome to the Test
+        </div>
+    </div>
+    <ul>
+        <li><a href="#">
+                <p>关于我们</P>
+                <div class="one"><img src="./img/3.png" alt=""></div>
+            </a>
+        </li>
+        <li><a href="../historyProblem/html/historyProblem.html">往期训练 <div class="two"><img src="./img/4.png" alt="">
+                </div></a>
+        </li>
+        <li><a href="#">练习结果 <div class="three"><img src="./img/5.png" alt=""></div></a>
+        </li>
+        <li><a href="../trueOrFalse/trueORfalse.html">本周考试 <div class="four"><img src="./img/6.png" alt=""></div></a>
+        </li>
+        <li><a class="link" href="../index/index.html">返回首页<div class="five"><img src="./img/0.gif" alt=""></div></a>
+        </li>
+    </ul>
+
+</body>
+<script>
+    var index = 0;
+    window.onload = function () {
+        setTimeout(function () {
+            var loader = document.getElementsByClassName("loader")[0];
+            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
+            setTimeout(function () { loader.style.display = "none" }, 1000)
+        }, 2000)
+    }
+    var word = document.getElementById("we").innerHTML;
+    function type() {
+        document.getElementById("aa").innerHTML = word.substring(0, index++);
+    }
+    setInterval(type, 40);
+</script>
+
+
+
+</html>

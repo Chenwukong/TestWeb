@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>答案</title>
+    <link rel="stylesheet" href="./rest.css">
+    <link rel="shortcut icon" href="../realProblem/img/1.jpg.icon.ico">
+    <style>
+        body {
+            background-image: url(./img/bj.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            user-select: none;
+        }
+
+        .loader {
+            position: absolute;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background: rgb(227, 230, 228);
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .loader-content {
+            position: absolute;
+            top: 300px;
+            left: 750px;
+        }
+
+        .fadeout {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+            }
+        }
+
+        /* 小分队 */
+        h1 {
+            color: white;
+            font-size: 60px;
+            font-family: '楷体';
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* 左标题盒子 */
+        .title {
+            width: 50px;
+            height: 150px;
+            /* border: 7px solid skyblue; */
+            transform: translateX(71px) translateY(140px);
+            animation: float 5s infinite;
+        }
+
+        @keyframes float {}
+
+        /* 自我检阅 */
+        .title>p {
+            color: white;
+            font-size: 40px;
+            font-family: '楷体';
+            word-spacing: 10px;
+        }
+
+        /* 第一个按钮 */
+        .but1 {
+            width: 90px;
+            border-radius: 5px;
+            padding: 3px;
+            font-family: '楷体';
+            background-color: turquoise;
+            box-shadow: 2px 2px 5px white;
+            transform: translateX(229px) translateY(-75px);
+            font-weight: bold;
+
+
+        }
+
+        /* 我的答案模块 */
+        .anself {
+            width: 275px;
+            background-color: skyblue;
+            border: 2px solid black;
+            border-radius: 6px;
+            transform: translateX(146px) translateY(-67px);
+            opacity: 0.5;
+            /* display: none; */
+        }
+
+        /* 悬停出现答案 */
+        /* .but1：hover .anself{
+            display: block;
+        } */
+        /* 第一个按钮 */
+        .but2 {
+            width: 90px;
+            border-radius: 5px;
+            padding: 3px;
+            font-family: '楷体';
+            background-color: turquoise;
+            box-shadow: 2px 2px 5px white;
+            transform: translateX(565px) translateY(-239px);
+            font-weight: bold;
+
+        }
+
+        /* 我的答案模块 */
+        .anself1 {
+            margin-top: 100px;
+            margin-left: 350px;
+            width: 275px;
+            background-color: skyblue;
+            border: 2px solid black;
+            border-radius: 6px;
+            transform: translateX(464px) translateY(-229px);
+            /* opacity: 0.5; */
+            /* display: none; */
+
+        }
+
+        #back {
+            cursor: pointer;
+            display: block;
+            width: 100px;
+            height: 50px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="back">上一页</button>
+    <div class="loader">
+        <div class="loader-content">
+            <img src="../img/test-img/e4cd0639b5a5c1e164aeff4370ed2365.gif" alt="Loader" class="loader-loader" />
+        </div>
+    </div>
+    <h1>
+        前端小分队
+    </h1>
+    <div class="title">
+        <p>自我检阅</p>
+    </div>
+    <!-- 自己的答案 -->
+    <!-- <button class="but1">
+        <p>
+            我的答案
+        </p>
+    </button> -->
+    <!-- 答案内容 -->
+    <!-- <ul class="anself">
+        
+        <li>2 linear-gardient:</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+
+    </ul> -->
+    <!-- 正确答案 -->
+    <!-- <button class="but2">
+        <p>
+           
+        </p>
+    </button> -->
+    <!-- 正确答案内容 -->
+    <ul class="anself1">
+        参考答案 <br>
+        <li>1
+            display:flex; <br>
+            justify-content: center; <br>
+            align-items: center;
+        </li>
+        </li>
+        <li>2 .circle { <br>
+            width: 200px;<br>
+            height: 200px;<br>
+            border-radius: 50%;<br>
+            background: radial-gradient(white 40%, black 40%);<br>
+
+            } </li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+</body>
+<script>
+    back.addEventListener("click", function () {
+        window.history.back();
+    })
+    window.onload = function () {
+        setTimeout(function () {
+            var loader = document.getElementsByClassName("loader")[0];
+            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
+            setTimeout(function () { loader.style.display = "none" }, 1000)
+        }, 2000)
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,107 @@
+body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+ol,ul{margin:0;padding:0;list-style:none;}
+img{border:none;}
+html,body{
+    height: 100%;
+    user-select: none;
+}
+a{
+    text-decoration:none;
+
+}
+
+.jump{
+    width: 60%;
+    height: 100px;
+    position: relative;
+    top: 30px;
+    left: 20%;
+    text-align: center;
+    font-size: 25px;
+}
+.jump>.tzsy{
+    width:100px ;
+    height: 100px;
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    font-size: 40px;
+    
+
+}
+.jump li{
+    display: inline-block;
+    vertical-align:middle;
+    
+}
+.jump .tp-one{
+    margin: 0px 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background:url(../img/tp-1.png) no-repeat -2px -3px/108px 108px;
+    /* overflow: hidden; */
+    box-shadow:0px 0px 10px 10px rgb(0, 225, 255) ;
+}
+
+/* .jump li>a{
+    text-decoration:none;
+} */
+
+.jump h1{
+    font-size: 45px;
+}
+
+.jump ul li a:hover{
+    color: green;
+ box-shadow: 1px 1px 10px lightpink;
+
+}
+.content{
+    width: 60%;
+    position: relative;
+    top: 150px;
+    left: 20%;
+ background-color: rgb(160,105,43);
+}
+.content>dl{
+    width: 100%;
+}
+dl>dt{
+    text-align: left;
+
+}
+.content strong{
+    font-size: 30px;
+}
+dl div{
+    box-sizing: border-box;
+    width: 100%;
+    height: 1000px;
+    background: url(../img/bj-1.jpg) no-repeat 0 0/100% 100%;
+    padding: 50px 60px;
+}
+
+.jump-right{
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    
+}
+.jump-right li{
+    width: 100px;
+    height: 20px;
+    /* border: 2px solid black; */
+    margin-top: 10px;
+    text-align: center;
+   background-color: rgb(154,98,42);
+} 
+.jump-right li:hover{
+    box-shadow: 1px 1px 5px black;
+   transform: scale(1.5);
+
+}
+.jump-right img{
+    width: 100%;
+    height: 100%;
+}

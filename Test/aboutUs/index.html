@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../realProblem/img/1.jpg.icon.ico">
+    <title>关于我们</title>
+    <link rel="stylesheet" href="./css/rest .css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 背景图片*/
+        .loader {
+            position: absolute;
+
+            z-index: 9999;
+            width: 100%;
+            height: 5000px;
+            background: rgb(227, 230, 228);
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .loader-content {
+            position: absolute;
+            top: 300px;
+            left: 750px;
+        }
+
+        .fadeout {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+            }
+        }
+
+        body {
+            user-select: none;
+            background-repeat: no-repeat;
+            background-color: rgb(100, 231, 241);
+
+            /* font-family:“楷体” */
+        }
+
+        .TB1 {
+            width: 100px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: lightgreen;
+
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .TB1:hover {
+            box-shadow: 1px 1px 10px 5px pink;
+        }
+
+        .TB1 a {
+            text-decoration: none;
+        }
+
+        .gywm {
+            width: 1100px;
+            height: 500mpx;
+            /* background-color: blue; */
+            padding: 20px;
+            margin-top: 20px;
+            /* margin-left: 100px; */
+            margin: auto;
+            font-size: 3em;
+            font-family: "楷体";
+            text-align: center;
+            /* 关于我们盒子样式 */
+        }
+
+        /* 介绍 */
+        .jieshao {
+            width: 1000px;
+            height: 1100px;
+            /* background-color: yellow; */
+        }
+
+        /* 关于介绍 */
+        .grjs {
+            width: 1000px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 85%;
+            font-size: 2em;
+        }
+
+        /* 详细大盒子 */
+        .xxjs {
+            width: 1100px;
+            height: 3300px;
+
+            /* background-color: rgb(241, 184, 184);     */
+        }
+
+        /* 杜阳姐 */
+        .w1 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/duyangjie.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w1>.ww1 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 2h */
+        .w2 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/zhy.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w2>.ww2 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 3h */
+        .w3 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/2.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w3>.ww3 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 4h */
+        .w4 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/xyl.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w4>.ww4 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 5h */
+        .w5 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/fzb.png);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w5>.ww5 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 6h */
+        .w6 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/cd.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w6>.ww6 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 7h */
+        .w7 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/szb.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w7>.ww7 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 8h */
+        .w8 {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border-radius: 25%;
+            background-image: url(./img/hfq.jpg);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w8>.ww8 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 9h */
+        .w9 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/ljyx.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w9>.ww9 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 10h */
+        .w10 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/yy.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w10>.ww10 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 11h */
+        .w11 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/fz.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w11>.ww11 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+            ;
+        }
+
+        /* 12h */
+        .w12 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/hs.bmp);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w12>.ww12 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+
+        }
+
+        .w13 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/jhw.jpg);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w13>.ww13 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+
+        }
+
+        .w14 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            border-radius: 25%;
+            background-image: url(./img/dxy.jpg);
+            background-size: cover;
+            margin-left: 50px;
+
+        }
+
+        .w14>.ww14 {
+            width: 600px;
+            height: 200px;
+            /* background-color: blue; */
+            margin-left: 300px;
+
+        }
+
+        .xxjs ul li>div>div {
+
+            display: none;
+            z-index: 2;
+        }
+
+        .xxjs ul li {
+            width: 1200px;
+            height: 380px;
+            list-style: none
+        }
+
+        span {
+            color: rgb(255, 93, 120);
+            font-size: 60px;
+        }
+    </style>
+    <!-- PS命名规范这方面我按简单的来 后面有需要我再改 我会打好说明的 -->
+    <!-- 没错 我的命名就是邪魔歪道写法 -->
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <img src="../img/test-img/e4cd0639b5a5c1e164aeff4370ed2365.gif" alt="Loader" class="loader-loader" />
+        </div>
+    </div>
+    <!-- 返回盒子 -->
+    <!-- 加超链接跳转 -->
+    <div class="TB1" id="TOP">
+        <a href="../index/index.html">首页</a>
+    </div>
+
+    <!-- 关于我们盒子 -->
+    <div class="gywm">
+        <h1>关 于 我 们</h1>
+        <!-- 介绍我们盒子-->
+        <div class="jieshao">
+            2021年8月16日，在第一节web前端39期基础课的课堂上，我们正式相识了。彼时大家都有一个共同的名字叫小白，我们来自五湖四海，不同的年龄，不同的性格，但怀着同样的热爱和目标相遇在前端的道路上。
+
+            经过一个月的学习，我们已经对彼此相互了解，我们也不再是小白，因为我们已经认识了一些前端的基础知识，但这些知识远远不够，并且我们发现，刚学完的知识点如果不复习和实践很容易被遗忘，为了解决这个问题，志同道合的我们建立了这个学习考试网站-前端考试系统，这个系统主要是针对学过的知识点进行巩固和考核，每周都会更新知识点，并且每周都会有考试，用来测试自己在过去的一周是否真正掌握了老师教过的知识。
+
+            这是我们的第一个项目，我们相信这仅仅是我们的一个开始，未来的路还很长，我们会继续努力，为了这份热爱，为了自己的目标，为了我们水过的诺言，一定会坚持下去，并且继续做很多很多的项目。<br>
+            加油，未来的高级软件工程师们！
+
+        </div>
+        <!-- 个人介绍盒子 -->
+        <div class="grjs">
+            <i>前端小分队个人介绍</i>
+        </div>
+
+
+
+        <!-- 详细介绍盒子 -->
+        <div class="xxjs">
+            <ul>
+                <li>
+                    <br>
+                    <div class="w1">
+
+                        <div class="ww1">
+                            <span>杜阳</span><br>
+                            负责主页。是前端小分队目前唯一的女成员，拥有丰富的前端案例实战经验，作为团队的创始人之一，一直不断超越突破自己，积极响应团队号召，和团队成员共同创建前端考试系统网站，并参与创建首页页面，期间积极参与讨论该项目的可行性研究及方向确定，循序渐进，直到项目完成上线。在前端的道路上，一步步朝着自己的目标迈进，坚信努力终将有所收获。
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <br>
+                    <div class="w2">
+
+                        <div class="ww2"> <span>张海阳</span> <br>
+                            负责注册页面。在队内负责宣传，吃苦耐劳，小分队老大哥，做事有远见，因多年销售经验，有着良好的口才。</div>
+                    </div>
+                </li>
+                <li>
+                    <br>
+
+                    <div class="w3">
+
+                        <div class="ww3"> <span>陈清</span> <br>
+                            负责JavaScript逻辑。在队内暂任总筹划，积极向上，乐于助人。因后悔没能把握住时间而现在加倍学习的假大佬。为了要好的同学们，也为了自己以后找工作能有拿得出手的项目而组织了小分队，坚信每个人都能闯出一片天地。
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w4">
+
+                        <div class="ww4"> <span>许元磊</span> <br>
+
+                            负责成功登录页面。光荣的退伍军人，会修坦克。为了家人有更好的生活而刻苦学习，虽有时粗心大意，但时常写代码写到深夜，为了一件事情能钻研很长一段时间，钻研精神的代表人。</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w5">
+
+                        <div class="ww5"> <span>付子博</span> <br>
+                            负责本页面。刻苦的大学生，有问题就会问</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w6">
+
+                        <div class="ww6"> <span>陈栋</span> <br>
+                            负责往期练习页面。做事快，说做就做，喜好登山。能看见事情本质，</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w7">
+
+                        <div class="ww7"> <span>孙中波</span> <br>
+                            负责答案页面。 平常从早忙到晚，还有各种考试接踵而来。被工作压得喘不过气，但是从未放弃过挣扎，因为要向所有人证明，自己能行！</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w8">
+
+                        <div class="ww8"> <span>何富强</span> <br>
+                            负责周考选择页面，27岁老同志，小分队笔记负责人，每节课的笔记都写的极为优秀，细节。在装逼的道路上浸淫多年，言行举止看似粗糙，但其实本质细心，感性。</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w9">
+
+                        <div class="ww9"> <span>李宇轩</span> <br>
+                            负责选择题，小分队隐藏大佬，曾经多次开发过app，有着丰富的经验，等找回手感有望成为一大顶梁柱。喜欢健身和写代码，是个不一样的程序猿 </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w10">
+
+                        <div class="ww10"> <span>洋洋</span> <br>
+                            负责填空题页面。懂得关心人，写代码有天赋 </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w11">
+
+                        <div class="ww11"> <span>刘发忠</span> <br>
+                            负责判断题页面。喜欢玩原神，活跃气氛组，小分队大忙人之一。 口头禅：@无限 我今天要请假</div>
+                    </div>
+                <li>
+                    <div class="w12">
+
+                        <div class="ww12"> <span>黄山</span> <br>
+                            负责个人登录页面。 口头禅：这不是很简单吗/吃瓜。 找素材唯美，干净简洁 </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w13">
+
+                        <div class="ww13"> <span>姜豪伟</span> <br>
+                            在小分队担任队医，相当重要
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="w14">
+
+                        <div class="ww14"> <span>邓旭源</span> <br>
+                            队内新人
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <a href="#TOP">点我回到顶部</a>
+        </div>
+        </ul>
+
+
+</body>
+<script>
+
+
+    var ws = document.querySelectorAll(".xxjs ul li>div>div");
+    var ws2 = document.querySelectorAll(".xxjs ul li>div");
+    window.onload = function () {
+        setTimeout(function () {
+            var loader = document.getElementsByClassName("loader")[0];
+            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
+            setTimeout(function () { loader.style.display = "none" }, 1000)
+        }, 2000)
+    }
+    for (let i = 0; i < ws.length; i++) {
+
+        ws2[i].addEventListener("mouseenter", function () {
+            ws2[i].style.width = "300px";
+            ws2[i].style.height = "300px";
+            ws[i].style.display = "block";
+            ws2[i + n].style.display = "none";
+        })
+        ws2[i].addEventListener("mouseleave", function () {
+            ws[i].style.display = "none";
+            ws2[i].style.width = "200px";
+            ws2[i].style.height = "200px";
+        })
+    }
+</script>
+
+</html>

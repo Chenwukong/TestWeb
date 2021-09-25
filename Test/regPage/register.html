@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端小分队，欢迎你来注册</title>
+    <link rel="shortcut icon" href="../realProblem/img/1.jpg.icon.ico">
+    <link rel="stylesheet" href="./css/gouwu.css">
+    <style>
+        html {
+            /* 给身体 body 一个背景图片 */
+            width: 100%;
+            height: 100%;
+            background: url(./img/23.jpg) no-repeat;
+            background-size: cover;
+
+        }
+
+        .loader {
+            position: absolute;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/test-img/fall.gif);
+
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .loader-content {
+            position: absolute;
+            top: 300px;
+            left: 750px;
+        }
+
+        .fadeout {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+            }
+        }
+
+        .egister {
+            /* 内容盒子 背景图片 居中 边框 圆角 */
+            position: relative;
+            width: 400px;
+            height: 600px;
+            background-image: url(./img/1.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 50px auto;
+            border: 2px solid yellow;
+            border-radius: 15px;
+        }
+
+        /* 表头给个盒子  大小 颜色和相对的位置 */
+        .egister .titli {
+            width: 150px;
+            height: 67px;
+            color: rosybrown;
+            box-shadow: 0px 0px 6px 5px rgb(218, 119, 53);
+            margin: 30px 60px;
+            text-align: center;
+            line-height: 35px;
+            background-color: transparent;
+        }
+
+        /* 头部的一个字体样式 */
+        .egister .titli>h2 {
+            font-size: 36px;
+        }
+
+        /* 头部的一个小字 字体样式 */
+        .egister .titli>p {
+            color: teal;
+        }
+
+        .egister .information {
+            width: 380px;
+            height: 350px;
+            /* border: 2px solid red; */
+            margin: auto;
+            line-height: 53px;
+            font-size: 19px;
+
+            /* -webkit-text-stroke: 1px pink; */
+            /* text-align: center; */
+        }
+
+        /* 填写项目名称 字体大小 样式 */
+        .egister .information>P>span {
+            font-size: 20px;
+            -webkit-text-stroke: 1px rgb(219, 132, 245);
+            color: transparent;
+
+        }
+
+        /* 长输入框的大小 行距 颜色 圆角 */
+        .egister .information .ipt {
+            width: 210px;
+            height: 25px;
+            color: #999999;
+            margin-top: 10px;
+            margin-left: 20px;
+            border-radius: 6px;
+
+        }
+
+        /* 中间输入框和 点击按钮 的输入框 大小 颜色 */
+        .egister .information>p>.ipt-bot {
+            width: 120px;
+            height: 25px;
+            color: #999999;
+            margin-top: 10px;
+            border-radius: 6px;
+
+        }
+
+        /* 所有的内容的 行高 */
+        .egister .information>p {
+            text-indent: 30px;
+        }
+
+        /* 小输入框的盒子位置  */
+        .input-right {
+            color: #999999;
+            position: relative;
+            bottom: 52px;
+            left: 225px;
+            border-radius: 6px;
+        }
+
+        /* 小的点击按钮框的大小 背景 */
+        .input-right>input {
+            width: 80px;
+            height: 31px;
+            color: #271515;
+            background-color: rgb(189, 222, 241);
+        }
+
+        /* 提交按钮 adi 提交注册 的 英文简写   位置 */
+        .information>.aib {
+            /* border: 1px solid red; */
+            position: relative;
+            top: 30px;
+            left: 0px;
+            cursor: pointer;
+
+        }
+
+        .last {
+            position: absolute;
+            bottom: 130px;
+        }
+
+        /* 确定按钮位置 大小 颜色 字体  字体居中 */
+        .information>.aib>input:nth-child(1) {
+            width: 60px;
+            height: 30px;
+            letter-spacing: 18px;
+            text-align: center;
+            -webkit-text-stroke: 1px rgb(100, 62, 236);
+            background-color: rgb(190, 233, 213);
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            left: 25%;
+        }
+
+        /* 重置按钮按的位置 大小 颜色 字体  字体居中 */
+        .information>.aib>input:nth-child(2) {
+            width: 60px;
+            height: 30px;
+            letter-spacing: 18px;
+            text-align: center;
+            -webkit-text-stroke: 1px rgb(100, 62, 236);
+            background-color: rgb(190, 233, 213);
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            left: 65%;
+        }
+
+        /* 取消 输入框的默认属性 */
+        input,
+        button {
+            outline: none;
+
+        }
+
+        /* 对输入框的 伪类效果 点击输入框  边框会变颜色 */
+        input:focus {
+            border: 2px solid rgb(138, 76, 238);
+        }
+
+        /* 最后的点击按钮  内容的字体大小*/
+        .information>.last:last-child {
+            font-size: 13px;
+
+        }
+
+        /* 最后的点击按钮内容的 特殊文字 字体大小 颜色*/
+        .information>.last>.sp1 {
+            font-size: 13px;
+            color: teal;
+            cursor: pointer;
+        }
+
+        .information>.last>.sp2 {
+            font-size: 13px;
+            color: teal;
+            cursor: pointer;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .pointer:hover {
+            box-shadow: 1px 1px 20px rgb(240, 145, 118);
+        }
+
+        .personalRules {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 450px;
+            background-color: rgba(205, 112, 49, 0.8);
+            z-index: 1;
+
+        }
+
+        .personalRules p {
+            color: black;
+            font-size: 18px;
+            line-height: 55px;
+            font-weight: bolder;
+        }
+
+        .teamRules {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 450px;
+            background-color: rgba(205, 112, 49, 0.8);
+            z-index: 1;
+
+        }
+
+        .teamRules p {
+            color: black;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loader-content">
+
+        </div>
+    </div>
+    <div class="egister">
+        <div class="personalRules">
+            <p>
+                个人举止: <br>
+                1. 不准骂人，说话干净，不偏执，不轻视他人。<br>
+                2. 不要拖，不要混，态度要端正，要努力有上进心。<br>
+                3. 争执可以有但不能吵架，而且话明气散。<br>
+                4. 别人说的话要理，就算不对也要指正出来，而不是无视。<br>
+                5. 禁止无意义刷屏抢龙王。<br>
+            </p>
+        </div>
+        <div class="teamRules">
+
+            <p>
+                团队举止：<br>
+                1. 团结互助，投票少用，但是重大事情必须投票，比如项目类型。意见建议类的事情无须投票。<br>
+                2. 有项目想法可以放在“保留项目”文件里，平时增删查改，到时候投票决定项目类型。<br>
+                2. 不可独断, 如果产生分歧，不要私下解决,摆在明面上让团队一起商量。<br>
+                3. 当有正事的时候可以用“正事：”为前缀，在讨论完这个话题前尽量避免说别的话题以防混乱，<br>
+                当讨论正经事的时候尽量不要发表情包，也不要一句话分为多段，尽量一句话完整的表达自己的观点，后面可以补充自己发言。不能乱用此前缀。<br>
+                4. 不可随意拉人进群，再添加团队成员需要8位以上成员同意。<br>
+                5. 讨论决策问题需等全员到齐。<br>
+            </p>
+
+        </div>
+        <div class="titli">
+            <h2>欢迎注册</h2>
+            <p class="top">
+                <span>已有账号？</span>
+                <a href="../logInPage/login.html" target="_Blank">登录</a>
+            </p>
+        </div>
+        <form action="../logInPage/login.html" class="information">
+            <p>
+                <span>用户名:</span>
+
+                <input type="text" placeholder="请设置用户名" class="ipt" id="RegUserName">
+            </p>
+            <p>
+                <span>密&nbsp;&nbsp;&nbsp;码:</span>
+                <input type="text" placeholder="请设置含有字母的8位密码" class="ipt" id="RegPassword">
+            </p>
+            <p>
+                <span>手机号:</span>
+                <input type="text" placeholder="可用于登录和找回密码" class="ipt">
+            </p>
+            <p>
+                <span>邮&nbsp;&nbsp;&nbsp;箱:</span>
+                <input type="text" placeholder="请输入邮箱" class="ipt">
+            </p>
+
+
+            </p>
+            <div class="aib">
+                <input type="submit" id="submit" value="确定" class="pointer">
+                <input type="reset" value="重置" name="" id="" class="pointer">
+            </div>
+            <p class="last">
+                <input type="checkbox" id="checkbox" class="pointer">阅读并接受 <span class="sp1">《小分队守则》</span> 及
+                <span class="sp2">《小分队管理守则》</span>
+            </p>
+
+        </form>
+    </div>
+
+</body>
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            var loader = document.getElementsByClassName("loader")[0];
+            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
+            setTimeout(function () { loader.style.display = "none" }, 1000)
+        }, 500)
+    }
+
+    var check = document.getElementById("checkbox");
+    var submit = document.querySelector("#submit");
+    var ipt = document.querySelectorAll("input");
+    var sp1 = document.querySelector(".sp1");   //个人守则
+    var sp2 = document.querySelector(".sp2");
+    var pers = document.querySelector(".personalRules"); //个人守则框
+    var team = document.querySelector(".teamRules");
+    window.addEventListener("load", function () {
+        check.checked = false;
+        submit.disabled = true;
+        submit.style.backgroundColor = "gray";
+        submit.classList.remove('pointer');
+    })
+    check.addEventListener("click", function () {
+        if (check.checked === true) {
+            submit.disabled = false;
+            submit.style.backgroundColor = "rgb(190,233,213)";
+            submit.classList.add('pointer');
+        } else {
+            submit.disabled = true;
+            submit.style.backgroundColor = "gray";
+            submit.classList.remove('pointer');
+        }
+
+    })
+
+    // 显示隐藏守则
+    sp1.addEventListener("mouseenter", function () {
+        pers.style.display = "block"
+    })
+    sp1.addEventListener("mouseleave", function () {
+        pers.style.display = "none"
+    })
+    sp2.addEventListener("mouseenter", function () {
+        team.style.display = "block"
+    })
+    sp2.addEventListener("mouseleave", function () {
+        team.style.display = "none"
+    })
+
+    // 给每个input设置focus去除value
+    for (let i = 0; i < ipt.length - 3; i++) {
+        ipt[i].addEventListener("focus", function () {
+            ipt[i].placeholder = "";
+        })
+    }
+    // 重新获取value
+    ipt[0].addEventListener("blur", function () {
+        ipt[0].placeholder = "请设置用户名";
+    })
+    ipt[1].addEventListener("blur", function () {
+        ipt[1].placeholder = "请设置含有字母的8位密码";
+    })
+    ipt[2].addEventListener("blur", function () {
+        ipt[2].placeholder = "可用于登录和找回密码";
+    })
+    ipt[3].addEventListener("blur", function () {
+        ipt[3].placeholder = "请输入邮箱";
+    })
+    ipt[4].addEventListener("blur", function () {
+        ipt[4].placeholder = "请输新密码 ";
+    })
+    // 储存本地数据
+    var RegUserName = document.querySelector("#RegUserName");
+    var RegPassword = document.querySelector("#RegPassword");
+    submit.addEventListener("click", function () {
+        localStorage.setItem("RegUserName", RegUserName.value)
+        localStorage.setItem("RegPassword", RegPassword.value)
+    })
+    localStorage.getItem("RegUserName");
+</script>
+
+</html>

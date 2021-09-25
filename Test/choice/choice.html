@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择题</title>
+    <link rel="stylesheet" href="./choice.css">
+    <link rel="shortcut icon" href="../realProblem/img/1.jpg.icon.ico">
+    <style>
+        body {
+            user-select: none;
+            background: url(./img/2.gif) no-repeat center/cover;
+        }
+
+        .loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 12000px;
+            background: rgb(252, 253, 222);
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .loader-content {
+            position: absolute;
+            top: 300px;
+            left: 750px;
+        }
+
+        .fadeout {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+            }
+        }
+
+        .choice {
+            width: 1000px;
+            margin-left: 100px;
+        }
+
+        .function {
+            width: 38px;
+            height: 300px;
+
+            position: fixed;
+            top: 200px;
+            right: 300px;
+        }
+
+        .function>a {
+            display: block;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            background-color: lightgreen;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .function>a:hover {
+            box-shadow: 1px 1px 10px pink;
+        }
+
+        .function>button:hover {
+            box-shadow: 1px 1px 10px blue;
+        }
+
+        /* 装饰用 */
+        .bigbox {
+            width: 800px;
+            height: 180px;
+            position: fixed;
+            top: 300px;
+            left: 300px;
+            margin: auto;
+        }
+
+        /* .bigbox>div{
+    border-bottom: 1px red solid;
+} */
+        .box1 {
+            width: 200px;
+            height: 180px;
+            float: left;
+            background: url(./img/西游img/wk.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0px;
+            position: absolute;
+            left: 0px;
+            /* transition: 4s; */
+            animation: wk 1s steps(8) infinite;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 180px;
+            float: left;
+            background: url(./img/西游img/west_02_47bad19.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0px;
+            position: absolute;
+            left: 200px;
+            /* transition: 4s; */
+            animation: bj 1s steps(8) infinite;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 262px;
+            float: left;
+            background: url(./img/西游img/xz.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0px;
+            background-size: 1600px;
+            position: absolute;
+            top: -53px;
+            left: 400px;
+            /* transition: 4s; */
+            animation: xz 1s steps(8) infinite;
+        }
+
+        .box4 {
+            width: 200px;
+            height: 180px;
+            float: left;
+            background: url(./img/西游img/wj.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-size: 1600px;
+            background-position: 0px;
+            position: absolute;
+            left: 600px;
+            /* transition: 4s; */
+            animation: wj 1s steps(8) infinite;
+        }
+
+        @keyframes wk {
+            100% {
+                background-position: -1600px;
+            }
+        }
+
+        @keyframes bj {
+            100% {
+                background-position: -1600px;
+            }
+        }
+
+        @keyframes xz {
+            100% {
+                background-position: -1600px;
+            }
+        }
+
+        @keyframes wj {
+            100% {
+                background-position: -1600px;
+            }
+        }
+
+        .check {
+            width: 80px;
+            margin-left: 850px;
+            margin-bottom: 0px;
+            height: 30px;
+            line-height: 30px;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<p></p>
+
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <!-- 没啥用，装饰页面 -->
+            <div class="bigbox">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+                <div class="box4"></div>
+            </div>
+        </div>
+    </div>
+    <form class="choice" action="" method="" name="login" target="">
+        <h1>选择题</h1>
+
+        <!-- 第一题 -->
+        <p><span>1、</span>
+            此道题中，span是什么颜色？ <br>
+            p{color:red;} <br>
+            span{ color:blue;} <br>
+            .pink{color:pink;}<br>
+            div p span{color="green";} <br>
+            < div> <br>
+                < p><br>
+                    < span class="pink"> <br>
+                        我是什么颜色 <br>
+                        < /span> <br>
+                            < /p> <br>
+
+                                < /div>
+
+        </p>
+        <!-- 这是显示框 -->
+        <input type="text" id="xian1" name="xianshi"> <br>
+        <input type="radio" class="choice1" id="one1" name="option" onclick="fang1('蓝色')">
+        <label for="one1">蓝色</label><br>
+        <input type="radio" class="choice2" id="one2" name="option" onclick="fang1('绿色')">
+        <label for="one2">绿色</label><br>
+        <input type="radio" class="choice3 correct" id="one3" name="option" onclick="fang1('粉红色')">
+        <label for="one3" class="correct">粉红色</label><br>
+        <input type="radio" class="choice4" id="one4" name="option" onclick="fang1('红色')">
+        <label for="one4">红色</label><br>
+        <!-- <input type="button" value="重答" onclick="newopen1()"> -->
+
+        <!-- 第二题 -->
+        <p><span>2、</span> 以下哪个选项可以让图片变模糊 </p>
+        <input type="text" id="xian2" name="xianshi"><br>
+        <input type="radio" class="choice1" id="tow1" name="option2" onclick="fang2('这里面A')">
+        <label for="tow1">transparent</label><br>
+        <input type="radio" class="choice2" id="tow2" name="option2" onclick="fang2('这里面B')">
+        <label for="tow2">opacity:0.5</label><br>
+        <input type="radio" class="choice3" id="tow3" name="option2" onclick="fang2('这里面C')">
+        <label for="tow3">filter:fade</label><br>
+        <input type="radio" class="choice4 correct" id="tow4" name="option2" onclick="fang2('这里面D')">
+        <label for="tow4" class="correct">filter:blur()</label><br>
+        <!-- <input type="button" value="重答" onclick="newopen2()"> -->
+
+        <!-- 第三题 -->
+        <p><span>3、</span>以下哪一个是单选按钮标签</p>
+        <input type="text" id="xian3" name="xianshi"><br>
+        <input type="radio" class="choice1 correct" id="three1" name="option3" onclick="fang3('这里面A')">
+        <label for="three1" class="correct">radio</label><br>
+        <input type="radio" class="choice2" id="three2" name="option3" onclick="fang3('这里面B')">
+        <label for="three2">circle</label><br>
+        <input type="radio" class="choice3" id="three3" name="option3" onclick="fang3('这里面C')">
+        <label for="three3">radius</label><br>
+        <input type="radio" class="choice4" id="three4" name="option3" onclick="fang3('这里面D')">
+        <label for="three4">checkbox</label><br>
+        <!-- <input type="button" value="重答" onclick="newopen3()"> -->
+
+        <!-- 第四题 -->
+        <p><span>4、</span>在表单中，name其中一个用途是？</p>
+        <input type="text" id="xian4" name="xianshi"><br>
+        <input type="radio" class="choice1" name="option4" id="four1" onclick="fang4('这里面A')">
+        <label for="four1">用来设置字体</label><br>
+        <input type="radio" class="choice2 correct" name="option4" id="four2" onclick="fang4('这里面B')">
+        <label for="four2" class="correct">防止用户选中多个单选按钮</label><br>
+        <input type="radio" class="choice3" name="option4" id="four3" onclick="fang4('这里面C')">
+        <label for="four3">用来显示初始文字</label><br>
+        <input type="radio" class="choice4" name="option4" id="four4" onclick="fang4('这里面D')">
+        <label for="four4">区别于其他的按钮</label><br>
+        <!-- <input type="button" value="重答" onclick="newopen4()"> -->
+
+        <!-- 第五题 -->
+        <p><span>5、</span>CSS的老师是？</p>
+        <input type="text" id="xian5" name="xianshi"><br>
+        <input type="radio" class="choice1" name="option5" id="five1" onclick="fang5('这里面A')">
+        <label for="five1" class="correct">无限</label><br>
+        <input type="radio" class="choice2" name="option5" id="five2" onclick="fang5('这里面B')">
+        <label for="five2">锦鲤</label><br>
+        <input type="radio" class="choice3" name="option5" id="five3" onclick="fang5('这里面C')">
+        <label for="five3">有限</label><br>
+        <input type="radio" class="choice4 " name="option5" id="five4" onclick="fang5 ('这里面D')">
+        <label for="five4">小龙</label><br>
+        <!-- <input type="button" value="重答" onclick="newopen5()"> -->
+
+
+        <!-- 第六题 -->
+        <!-- <p><span>6、</span>这是题干</p>
+        <input type="text" id="xian1" name="xianshi" value="0"><br>
+        <input type="radio" class="choice1" name="option" onclick="fang1('这里面A')">
+        <label for="">这里面放的是选项</label><br>
+        <input type="radio" class="choice2" name="option" onclick="fang1('这里面B')">
+        <label for="">这里面放的是选项</label><br>
+        <input type="radio" class="choice3" name="option" onclick="fang1('这里面C')">
+        <label for="">这里面放的是选项</label><br>
+        <input type="radio" class="choice4" name="option" onclick="fang1('这里面D')">
+        <label for="">这里面放的是选项</label><br>
+        <input type="button" value="重答" onclick="newopen()"> -->
+        <div class="function">
+            <a href="../index/index.html">首页</a>
+            <a href="../weekTest/weekTest.html">周考选择</a>
+            <!-- <a href="../aboutUs/index.html">关于我们</a> -->
+
+        </div>
+
+    </form>
+    <button class="check">查看答案</button>
+
+    <script>
+        var cor = document.querySelectorAll(".correct")
+        var btn = document.querySelector(".check");
+        btn.addEventListener("click", function () {
+            for (let i = 0; i < cor.length; i++) {
+                cor[i].style.color = "green";
+                cor[i].style.fontSize = "20px";
+            }
+        })
+
+        window.onload = function () {
+            setTimeout(function () {
+                var loader = document.getElementsByClassName("loader")[0];
+                loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
+                setTimeout(function () { loader.style.display = "none" }, 1000)
+            }, 1500)
+        }
+
+
+
+        function fang1(shu) {
+            var txt = document.getElementById("xian1").value;
+            if (txt == "0") {
+                document.getElementById("xian1").value = shu;
+            }
+        }
+        function newopen1() {
+            document.getElementById("xian1").value = "";
+        }
+
+        function fang2(shu) {
+            var txt = document.getElementById("xian2").value;
+            if (txt == "0") {
+                document.getElementById("xian2").value = shu;
+            }
+        }
+        function newopen2() {
+            document.getElementById("xian2").value = "";
+        }
+
+        function fang3(shu) {
+            var txt = document.getElementById("xian3").value;
+            if (txt == "0") {
+                document.getElementById("xian3").value = shu;
+            }
+        }
+        function newopen3() {
+            document.getElementById("xian3").value = "";
+        }
+
+        function fang3(shu) {
+            var txt = document.getElementById("xian3").value;
+            if (txt == "0") {
+                document.getElementById("xian3").value = shu;
+            }
+        }
+        function newopen3() {
+            document.getElementById("xian3").value = "";
+        }
+
+        function fang4(shu) {
+            var txt = document.getElementById("xian4").value;
+            if (txt == "0") {
+                document.getElementById("xian4").value = shu;
+            }
+        }
+        function newopen4() {
+            document.getElementById("xian4").value = "";
+        }
+
+        function fang5(shu) {
+            var txt = document.getElementById("xian5").value;
+            if (txt == "0") {
+                document.getElementById("xian5").value = shu;
+            }
+        }
+        function newopen5() {
+            document.getElementById("xian5").value = "";
+        }
+
+
+
+    </script>
+</body>
+
+</html>

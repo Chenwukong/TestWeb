@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../realProblem/img/1.jpg.icon.ico">
+    <title>对错题</title>
+    <style>
+        *,
+        html {
+
+            padding: 0;
+            margin: 0;
+            user-select: none;
+        }
+
+        .loader {
+            position: absolute;
+
+            z-index: 9999;
+            width: 100%;
+            height: 3000px;
+            background: rgb(227, 230, 228);
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .loader-content {
+            position: absolute;
+            top: 300px;
+            left: 750px;
+        }
+
+        .fadeout {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+            }
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .bigBox {
+            width: 1900px;
+            height: 2400px;
+            background: url(./背景.jpg) no-repeat center;
+
+        }
+
+        .box {
+            position: relative;
+            top: 450px;
+            left: 600px;
+            width: 210px;
+            height: 600px;
+            font-size: 0;
+        }
+
+        .box button {
+            display: inline-block;
+            cursor: pointer;
+            width: 100px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid pink;
+            margin-left: 2px;
+        }
+
+        button:hover {
+            box-shadow: 1px 0px 5px 2px pink;
+        }
+
+        a:hover {
+            box-shadow: 1px 0px 5px 2px pink;
+        }
+
+        .box p {
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        .box span {
+            width: 200px;
+            height: 200px;
+            font-size: 14px;
+        }
+
+        .box li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 200px;
+            font-size: 18px;
+        }
+
+        .box li form {
+            font-size: 15px;
+
+        }
+
+        .box li:nth-of-type(1) {
+            top: 50px;
+            left: 100px;
+        }
+
+        .box li:nth-of-type(2) {
+            top: 125px;
+            left: 150px;
+        }
+
+        .box li:nth-of-type(3) {
+            top: 200px;
+            left: 200px;
+        }
+
+        .box li:nth-of-type(4) {
+            top: 275px;
+            left: 250px;
+        }
+
+        .box li:nth-of-type(5) {
+            top: 350px;
+            left: 300px;
+        }
+
+        .box li:nth-of-type(6) {
+            top: 425px;
+            left: 350px;
+        }
+
+        #top {
+            background-color: lightblue;
+        }
+
+        #back {
+            background-color: yellow;
+        }
+
+        a {
+            position: absolute;
+            top: 0px;
+            left: 205px;
+            display: block;
+            width: 100px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: pink;
+            color: blue;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+        }
+
+        .check {
+            position: absolute;
+            left: 700px;
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <img src="../img/test-img/e4cd0639b5a5c1e164aeff4370ed2365.gif" alt="Loader" class="loader-loader" />
+        </div>
+    </div>
+    <div class="bigBox">
+        <ul class="box">
+            <p>判断题</p><span>（选择对/错）</span>
+            <li>1. 在flex布局中， 当子元素加起来超过父元素的宽度时，子元素会自动分配到下一行
+                <form>
+                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
+                    <input type="radio" name="duicuo" id="0"> <label class="correct" for="0"> 错</label>
+                </form>
+            </li>
+            <li>2. transparent和opactiy的效果是一样的
+                <form>
+                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
+                    <input type="radio" name="duicuo" id="0"> <label class="correct" for="0"> 错</label>
+                </form>
+            </li>
+            <li>3. 基础不重要，只要学好框架就行了
+                <form>
+                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
+                    <input type="radio" name="duicuo" id="0"> <label for="0" class="correct"> 错</label>
+                </form>
+            </li>
+            <li>4. 只听录播就能记住全部新知识了
+                <form>
+                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
+                    <input type="radio" name="duicuo" id="0"> <label for="0" class="correct"> 错</label>
+                </form>
+            </li>
+            <li>5. 汉字的序顺不并影响阅读
+                <form>
+                    <input type="radio" name="duicuo" id="1"><label class="correct" for="1"> 对</label>
+                    <input type="radio" name="duicuo" id="0"> <label for="0"> 错</label>
+                </form>
+            </li>
+
+        </ul>
+        <div class="box">
+            <button id="top">回到顶部</button>
+            <button id="back">回到上一页</button>
+            <a href="../weekTest/weekTest.html">周考目录</a>
+        </div>
+        <button class="check">检查答案</button>
+    </div>
+</body>
+<script>
+    var cor = document.querySelectorAll(".correct");
+    var btn = document.querySelector(".check");
+    btn.addEventListener("click", function () {
+        for (let i = 0; i < cor.length; i++) {
+            cor[i].style.color = "green";
+            cor[i].style.fontSize = "20px";
+            cor[i].style.fontWeight = "bolder";
+        }
+    })
+    var back = document.querySelector("#back");
+    back.addEventListener("click", function () {
+
+        window.history.back();
+    })
+    var scrollTop = document.querySelector("#top");
+    scrollTop.addEventListener("click", function () {
+        window.scrollTo(0, 0);
+    })
+    window.onload = function () {
+        setTimeout(function () {
+            var loader = document.getElementsByClassName("loader")[0];
+            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
+            setTimeout(function () { loader.style.display = "none" }, 1000)
+        }, 2000)
+    }
+
+
+
+</script>
+
+</html>

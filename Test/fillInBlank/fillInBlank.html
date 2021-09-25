@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>填空题</title>
+    <link rel="stylesheet" href="./rest.css">
+    <style>
+        html,
+        body {
+            user-select: none;
+            background-color: rgb(244, 244, 244);
+        }
+
+        .loader {
+            position: absolute;
+
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background: rgb(244, 244, 244);
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .loader-content {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .fadeout {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+            }
+        }
+
+
+        .Completion {
+            width: 1152px;
+            height: 864px;
+
+            background: url(./img/2.gif);
+            z-index: -2;
+        }
+
+        h1 {
+            text-indent: 20px;
+            margin: 0px 0px 0px 77px;
+        }
+
+        .wrap>li>.first {
+            text-indent: 47px;
+        }
+
+
+        input {
+            outline: none;
+        }
+
+        .wrap>li>:nth-of-type(n+1) {
+            float: left;
+
+        }
+
+        .wrap>.Completion1 {
+            margin-top: 37px;
+            margin-left: 40px;
+        }
+
+        .wrap>.Completion2 {
+            margin-top: 37px;
+            margin-left: 40px;
+        }
+
+        .wrap>.Completion3 {
+            margin-top: 37px;
+            margin-left: 40px;
+        }
+
+        .wrap>.Completion4 {
+            margin-top: 37px;
+            margin-left: 40px;
+        }
+
+        .wrap>.Completion5 {
+            margin-top: 37px;
+            margin-left: 40px;
+        }
+
+        p {
+            font-family: kaiti;
+            line-height: 25px;
+        }
+
+        input {
+            border: transparent;
+            border-bottom: solid 1px;
+            line-height: 25px;
+            text-align: center;
+            background: transparent;
+        }
+
+        .Completion4>input {
+            margin-left: 50px;
+            width: 233px;
+        }
+
+        .Completion5>input {
+            width: 233px;
+        }
+
+        .bag {
+            width: 300px;
+            height: 200px;
+            background-color: aqua;
+            position: absolute;
+            bottom: 0px;
+            right: 400px;
+            cursor: pointer;
+            background: url(./img/3.gif) no-repeat center/cover;
+        }
+
+        .wrap>a {
+            text-decoration-line: none;
+        }
+
+        .wrap>a>p {
+            margin-left: 15px;
+            margin-top: 30px;
+        }
+
+        .nav {
+            position: absolute;
+            left: 1200px;
+            top: 100px;
+
+        }
+
+        .nav a {
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            margin-left: 100px;
+            background-color: red;
+            cursor: pointer;
+        }
+
+        .ans {
+            margin-left: 100px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <img src="./img/3.gif" alt="Loader" class="loader-loader" />
+
+        </div>
+    </div>
+
+    <div class="Completion">
+        <h1>填空题</h2>
+            <ol class="wrap">
+
+                <li class="Completion1">
+                    <p class="first">《例》你必须需要写</p>
+                    <input type="textarea" placeholder="display:flex">
+                    <p>开启弹性布局</p>
+                </li><br>
+                <li class="Completion2">
+                    <p class="first">在flex布局中，你将使用 </p>
+                    <input type="textarea" placeholder="请在此填写答案">
+                    <p>让子元素侧轴居中</p>
+                </li><br>
+                <li class="Completion3">
+                    <p class="first">你可以在a标签里面添加 </p>
+                    <input type="textarea" placeholder="请在此填写答案">
+                    <p>让每个链接跳转都打开新页面</p>
+                </li><br>
+                <li class="Completion4">
+                    <p class="first">你可以使用 </p>
+                    <input type="textarea" placeholder="请在此填写答案">
+                    <p>标签放入视频，</p>
+                    <input type="textarea" placeholder="请在此填写答案">
+                    <p>标签放入音频</p>
+                </li><br>
+                <li class="Completion5">
+                    <p class="first">不透明度标签是 </p>
+                    <input type="textarea" placeholder="请在此填写答案">
+                </li>
+                <li class="Completion5">
+                    <p class="first"> animation-iteration-count： </p>
+                    <input type="textarea" placeholder="请在此填写答案">
+                    <p>能无限次播放动画</p>
+                </li>
+            </ol>
+            <button class="btn">查看答案</button>
+            <div class="ans">
+                <P>
+                    2. align-items:center <br>
+                    3. target=“_blank" <br>
+                    4. video, audio <br>
+                    5. opacity(1为完全不透明，0为完全透明) <br>
+                    6. infinite
+                </P>
+            </div>
+            <br>
+
+
+            <div class="bag"></div>
+            <div class="nav">
+                <a href="../index/index.html">
+                    <p>首页</p>
+                </a> <br>
+                <a href="../choice/choice.html">
+                    <p>选择题</p>
+                </a> <br>
+                <a href="../trueOrFalse/trueORfalse.html">
+                    <p>判断题</p>
+                </a> <br>
+                <a href="../realProblem/realProblem.html">
+                    <p>实操题</p>
+                </a> <br>
+                <a href="../aboutUs/index.html">
+                    <p>关于我们</p>
+                </a>
+            </div>
+    </div>
+</body>
+<script>
+
+    window.onload = function () {
+        setTimeout(function () {
+            var loader = document.getElementsByClassName("loader")[0];
+            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
+            setTimeout(function () { loader.style.display = "none" }, 2000)
+        }, 2000)
+    }
+    var btn = document.querySelector("button");
+    var ans = document.querySelector(".ans");
+    let flag = true;
+    btn.addEventListener("click", function () {
+        if (flag === true) {
+            ans.style.display = "block";
+            flag = false;
+        } else {
+            ans.style.display = "none";
+            flag = true;
+        }
+    })
+    var bag = document.querySelector(".bag");
+    bag.onclick = function () {
+        bag.style.display = "none";
+    }
+</script>
+
+</html>

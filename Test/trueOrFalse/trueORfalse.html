@@ -182,34 +182,34 @@
     <div class="bigBox">
         <ul class="box">
             <p>判断题</p><span>（选择对/错）</span>
-            <li>1. 在flex布局中， 当子元素加起来超过父元素的宽度时，子元素会自动分配到下一行
-                <form>
-                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
-                    <input type="radio" name="duicuo" id="0"> <label class="correct" for="0"> 错</label>
-                </form>
-            </li>
-            <li>2. transparent和opactiy的效果是一样的
-                <form>
-                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
-                    <input type="radio" name="duicuo" id="0"> <label class="correct" for="0"> 错</label>
-                </form>
-            </li>
-            <li>3. 基础不重要，只要学好框架就行了
-                <form>
-                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
-                    <input type="radio" name="duicuo" id="0"> <label for="0" class="correct"> 错</label>
-                </form>
-            </li>
-            <li>4. 只听录播就能记住全部新知识了
-                <form>
-                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
-                    <input type="radio" name="duicuo" id="0"> <label for="0" class="correct"> 错</label>
-                </form>
-            </li>
-            <li>5. 汉字的序顺不并影响阅读
+            <li>1. 数组里面可以放对象,反之亦然
                 <form>
                     <input type="radio" name="duicuo" id="1"><label class="correct" for="1"> 对</label>
                     <input type="radio" name="duicuo" id="0"> <label for="0"> 错</label>
+                </form>
+            </li>
+            <li>2. 对象也能使用length方法
+                <form>
+                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
+                    <input type="radio" name="duicuo" id="0"> <label class="correct" for="0"> 错</label>
+                </form>
+            </li>
+            <li>3. 数组内的数据无法在外面更改
+                <form>
+                    <input type="radio" name="duicuo" id="1"><label for="1"> 对</label>
+                    <input type="radio" name="duicuo" id="0"> <label for="0" class="correct"> 错</label>
+                </form>
+            </li>
+            <li>4. let可以重新赋值，但是无法重新申明。 const不可以重新赋值，也无法重新申明。
+                <form>
+                    <input type="radio" name="duicuo" id="1"><label for="1" class="correct"> 对</label>
+                    <input type="radio" name="duicuo" id="0"> <label for="0"> 错</label>
+                </form>
+            </li>
+            <li>5. 抄袭同学的作业就等于自己做了作业。
+                <form>
+                    <input type="radio" name="duicuo" id="1"><label for="1"> 骗到了老师</label>
+                    <input type="radio" name="duicuo" id="0"> <label for="0" class="correct ">骗到了自己</label>
                 </form>
             </li>
 
@@ -225,12 +225,14 @@
 <script>
     var cor = document.querySelectorAll(".correct");
     var btn = document.querySelector(".check");
+    var hebi = document.querySelector(".hebi")
     btn.addEventListener("click", function () {
         for (let i = 0; i < cor.length; i++) {
             cor[i].style.color = "green";
             cor[i].style.fontSize = "20px";
             cor[i].style.fontWeight = "bolder";
         }
+        cor[4].style.color = "red";
     })
     var back = document.querySelector("#back");
     back.addEventListener("click", function () {

@@ -134,6 +134,10 @@
             height: 50px;
             background-color: green;
         }
+
+        p {
+            color: blue;
+        }
     </style>
 </head>
 
@@ -174,24 +178,56 @@
     <!-- 正确答案内容 -->
     <ul class="anself1">
         参考答案 <br>
-        <li>1
-            display:flex; <br>
-            justify-content: center; <br>
-            align-items: center;
+        <li>
+            <p>第三道题：</p> <br>
+            function fn(){ <br>
+            alert("朱雀"); <br>
+            } <br>
+            fn(); <br>
         </li>
+        <li>
+            <p>第四道题：</p> <br>
+            let fn2=function(){ <br>
+            console.log("锦鲤"); <br>
+            } <br>
+            fn2();
         </li>
-        <li>2 .circle { <br>
-            width: 200px;<br>
-            height: 200px;<br>
-            border-radius: 50%;<br>
-            background: radial-gradient(white 40%, black 40%);<br>
 
-            } </li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
     </ul>
+    <ul class="anself1" style="position: absolute;left: -700px; top:290px">
+        参考答案 <br>
+        <li>
+            <p>第一道题：</p> <br>
+            let arr=[0,1,2,3,4]; <br>
+            console.log(arr[3]);
+        </li>
+        <li>
+            <p>第二道题：</p> <br>
+            let obj={<br>
+            names:"陈清",<br>
+            age:23,<br>
+            sex:"男",<br>
+            hobby:"电子游戏"<br>
+            }<br>
+            console.log(obj.sex)
 
+    </ul>
+    <ul class="anself1" style="position: absolute;left: 700px; top:290px">
+        参考答案 <br>
+        <li>
+            <p>第五道题：</p> <br>
+            sum = (age1 + age2 + age3 + age4) / 4; <br>
+            alert(sum)
+        </li>
+        <li>
+            <p>第六道题：</p> <br>
+            temp = teacherName; <br>
+            teacherName = age;<br>
+            age = temp;<br>
+            console.log(teacherName + "老师永远" + age)<br>
+        </li>
+
+    </ul>
 </body>
 <script>
     back.addEventListener("click", function () {

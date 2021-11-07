@@ -201,108 +201,138 @@
         <h1>选择题</h1>
 
         <!-- 第一题 -->
-        <p><span>1、以下哪种是正确定义function的其中一种方式？</span>
-
-        </p>
+        <p><span>1、用splice()实现在数组的末尾添加数组项时，以下说法错误的是</span></p>
         <!-- 这是显示框 -->
-        <input type="text" id="xian1" name="xianshi"> <br>
+        <!-- <input type="text" id="xian1" name="xianshi"> <br> -->
         <input type="radio" class="choice1 " id="one1" name="option" onclick="fang1('A')">
-        <label for="one1">let fn=function{}( <br>
-            console.log("海贼王，我当定了！") <br>
-            )</label><br>
+        <label for="one1">第一个参数表示开始的下标数</label><br>
         <input type="radio" class="choice2" id="one2" name="option" onclick="fang1('B')">
-        <label for="one2">let fn()=function(){ <br>
-            console.log("海贼王，我当定了！") <br>
-            }
-
-        </label><br>
+        <label for="one2">第一个参数表示数组的长度 </label><br>
         <input type="radio" class="choice3 " id="one3" name="option" onclick="fang1('C')">
-        <label for="one3" class="correct">
-            let fn=function(){ <br>
-            console.log("海贼王，我当定了！") <br>
-            }
-
-        </label><br>
+        <label for="one3" class="correct">该方法改变了原数组</label><br>
         <input type="radio" class="choice4" id="one4" name="option" onclick="fang1('D')">
-        <label for="one4">function=fn(){ <br>
-            console.log("海贼王，我当定了！") <br>
-
-            }
-
-        </label><br>
+        <label for="one4"> 第三个参数表示要添加的数组项</label><br>
         <!-- <input type="button" value="重答" onclick="newopen1()"> -->
 
         <!-- 第二题 -->
-        <p><span>2、</span> 以下哪个选项可以让图片变模糊 </p>
-        <input type="text" id="xian2" name="xianshi"><br>
+        <p><span>2、</span> x=x{x:1};y=y{y:1};z=1;n="1"} </p>
+        <!-- <input type="text" id="xian2" name="xianshi"><br> -->
         <input type="radio" class="choice1" id="tow1" name="option2" onclick="fang2('这里面A')">
-        <label for="tow1">transparent</label><br>
+        <label for="tow1">x===y</label><br>
         <input type="radio" class="choice2" id="tow2" name="option2" onclick="fang2('这里面B')">
-        <label for="tow2">opacity:0.5</label><br>
+        <label for="tow2">x==y</label><br>
         <input type="radio" class="choice3" id="tow3" name="option2" onclick="fang2('这里面C')">
-        <label for="tow3">filter:fade</label><br>
-        <input type="radio" class="choice4 correct" id="tow4" name="option2" onclick="fang2('这里面D')">
-        <label for="tow4" class="correct">filter:blur()</label><br>
+        <label for="tow3" class="correct">z==n</label><br>
+        <input type="radio" class="choice4" id="tow4" name="option2" onclick="fang2('这里面D')">
+        <label for="tow4" >x===n</label><br>
         <!-- <input type="button" value="重答" onclick="newopen2()"> -->
 
         <!-- 第三题 -->
-        <p><span>3、</span>以下哪种选项正确使用了BigInt字面量并用了加法</p>
-        <input type="text" id="xian3" name="xianshi"><br>
+        <p><span>3、</span>
+            let a=[4];<br>
+            let b= a;<br>
+            a =[4,44];<br>
+            console.log(b);<br>
+            a=b;<br>
+            b.push(44);<br>
+            console.log(a)<br>
+            以上代码中的两次打印结果分别输出什么值？</p>
+        <!-- <input type="text" id="xian3" name="xianshi"><br> -->
         <input type="radio" class="choice1 correct" id="three1" name="option3" onclick="fang3('这里面A')">
-        <label for="three1" class="correct">let num=1n+2n</label><br>
+        <label for="three1" >[4,44],[4]</label><br>
         <input type="radio" class="choice2" id="three2" name="option3" onclick="fang3('这里面B')">
-        <label for="three2">let num=1b+b</label><br>
+        <label for="three2">[4],[4]</label><br>
         <input type="radio" class="choice3" id="three3" name="option3" onclick="fang3('这里面C')">
-        <label for="three3">let num=1n+2</label><br>
+        <label for="three3" class="correct">[4],[4,44]</label><br>
         <input type="radio" class="choice4" id="three4" name="option3" onclick="fang3('这里面D')">
-        <label for="three4">let num=1b+1</label><br>
+        <label for="three4">[4,44][4,44]</label><br>
         <!-- <input type="button" value="重答" onclick="newopen3()"> -->
 
         <!-- 第四题 -->
         <p><span>4、</span>
-            let arr={'路飞',"娜美",'索隆',"山治","乌索普","罗宾","乔巴"}; <br>
-            以下哪个选项能让路飞打印出来</p>
-        <input type="text" id="xian4" name="xianshi"><br>
+            在JS函数的定义格式中，下面各组成部分中，可省略的是
+        </p>
+        <!-- <input type="text" id="xian4" name="xianshi"><br> -->
         <input type="radio" class="choice1" name="option4" id="four1" onclick="fang4('这里面A')">
-        <label for="four1">arr['路飞']</label><br>
+        <label for="four1">函数名</label><br>
         <input type="radio" class="choice2 " name="option4" id="four2" onclick="fang4('这里面B')">
-        <label for="four2">arr[0]</label><br>
+        <label for="four2">指明函数的一对圆括号</label><br>
         <input type="radio" class="choice3" name="option4" id="four3" onclick="fang4('这里面C')">
-        <label for="four3">let.arr[1]</label><br>
+        <label for="four3">函数体</label><br>
         <input type="radio" class="choice4 " name="option4" id="four4" onclick="fang4('这里面D')">
-        <label for="four4" class="correct" >不可能</label><br>
+        <label for="four4" class="correct">函数参数</label><br>
         <!-- <input type="button" value="重答" onclick="newopen4()"> -->
 
         <!-- 第五题 -->
-        <p><span>5、</span>我们js的老师是？</p>
-        <input type="text" id="xian5" name="xianshi"><br>
+        <p><span>5、</span>不属于调用JS函数的方式是</p>
+        <!-- <input type="text" id="xian5" name="xianshi"><br> -->
         <input type="radio" class="choice1" name="option5" id="five1" onclick="fang5('这里面A')">
-        <label for="five1" class="correct">雀雀</label><br>
+        <label for="five1">作为函数</label><br>
         <input type="radio" class="choice2" name="option5" id="five2" onclick="fang5('这里面B')">
-        <label for="five2">锦鲤</label><br>
+        <label for="five2">作为对象的方法</label><br>
         <input type="radio" class="choice3" name="option5" id="five3" onclick="fang5('这里面C')">
-        <label for="five3">无限</label><br>
+        <label for="five3"  class="correct">作为数组来间接调用</label><br>
         <input type="radio" class="choice4 " name="option5" id="five4" onclick="fang5 ('这里面D')">
-        <label for="five4">夏栀</label><br>
+        <label for="five4">作为对象的构造函数</label><br>
         <!-- <input type="button" value="重答" onclick="newopen5()"> -->
 
 
         <!-- 第六题 -->
-        <!-- <p><span>6、</span>这是题干</p>
-        <input type="text" id="xian1" name="xianshi" value="0"><br>
-        <input type="radio" class="choice1" name="option" onclick="fang1('这里面A')">
-        <label for="">这里面放的是选项</label><br>
-        <input type="radio" class="choice2" name="option" onclick="fang1('这里面B')">
-        <label for="">这里面放的是选项</label><br>
-        <input type="radio" class="choice3" name="option" onclick="fang1('这里面C')">
-        <label for="">这里面放的是选项</label><br>
-        <input type="radio" class="choice4" name="option" onclick="fang1('这里面D')">
-        <label for="">这里面放的是选项</label><br>
-        <input type="button" value="重答" onclick="newopen()"> -->
+        <p><span>6、</span>下列哪个转义符表示换行</p>
+        <!-- <input type="text" id="xian1" name="xianshi" value="0"><br> -->
+        <input type="radio" class="choice1" name="option6" onclick="fang6('这里面A')">
+        <label for="">\b</label><br>
+        <input type="radio" class="choice2" name="option6" onclick="fang6('这里面B')">
+        <label for=""  class="correct">\n</label><br>
+        <input type="radio" class="choice3" name="option6" onclick="fang6('这里面C')">
+        <label for="">\`</label><br>
+        <input type="radio" class="choice4" name="option6" onclick="fang6('这里面D')">
+        <label for="">\\</label><br>
+
+        <!-- 第七题 -->
+        <p><span>7、</span>一般forEach接收的回调函数可接收3个参数，其中第二个参数表示什么</p>
+        <!-- <input type="text" id="xian1" name="xianshi" value="0"><br> -->
+        <input type="radio" class="choice1" name="option7" onclick="fang7('这里面A')">
+        <label for="">value数组项</label><br>
+        <input type="radio" class="choice2" name="option7" onclick="fang7('这里面B')">
+        <label for="">数组本身</label><br>
+        <input type="radio" class="choice3" name="option7" onclick="fang7('这里面C')">
+        <label for=""  class="correct">索引值</label><br>
+        <input type="radio" class="choice4" name="option7" onclick="fang7('这里面D')">
+        <label for="">数组长度</label><br>
+
+        <!-- 第八题 -->
+        <p><span>8、
+            let b=4 <br>
+            functiom fn(b=5){<br>
+            functiom fn1(b){<br>
+            console.log(b);}<br>
+
+            fn1() <br>
+            console.log(b)
+            }
+            <br>
+            fn() <br>
+           以上代码输出什么结果？</span>
+
+    </p>
+    <!-- 这是显示框 -->
+    <!-- <input type="text" id="xian1" name="xianshi"> <br> -->
+    <input type="radio" class="choice1 " id="one1" name="option8" onclick="fang8('A')">
+    <label for="one1">4,6</label><br>
+    <input type="radio" class="choice2" id="one2" name="option8" onclick="fang8('B')">
+    <label for="one2">6,6</label><br>
+    <input type="radio" class="choice3 " id="one3" name="option8" onclick="fang8('C')">
+    <label for="one3" >5,6</label><br>
+    <input type="radio" class="choice4" id="one4" name="option8" onclick="fang8('D')">
+    <label for="one4"  class="correct"> undefined,6 </label><br>
+    <input type="button" value="重答" onclick="newopen()">
+
         <div class="function">
             <a href="../index/index.html">首页</a>
             <a href="../weekTest/weekTest.html">周考选择</a>
             <!-- <a href="../aboutUs/index.html">关于我们</a> -->
+
 
         </div>
 

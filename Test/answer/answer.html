@@ -8,39 +8,23 @@
     <link rel="stylesheet" href="./rest.css">
     <link rel="shortcut icon" href="../realProblem/img/1.jpg.icon.ico">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-image: url(./img/bj.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             user-select: none;
-        }
-
-        .loader {
-            position: absolute;
-            top: 0;
-            z-index: 9999;
             width: 100%;
             height: 100%;
-            background: rgb(227, 230, 228);
-            text-align: center;
-            transition: opacity 1s ease;
         }
 
-        .loader-content {
-            position: absolute;
-            top: 300px;
-            left: 750px;
-        }
-
-        .fadeout {
-            opacity: 0;
-            filter: alpha(opacity=0);
-        }
-
-        @keyframes fadeInDown {
-            0% {
-                opacity: 0;
-            }
+        html {
+            width: 100%;
+            height: 100%;
         }
 
         /* 小分队 */
@@ -57,11 +41,10 @@
             width: 50px;
             height: 150px;
             /* border: 7px solid skyblue; */
-            transform: translateX(71px) translateY(140px);
-            animation: float 5s infinite;
+            position: absolute;
+            left: 100px;
+            top: 200px;
         }
-
-        @keyframes float {}
 
         /* 自我检阅 */
         .title>p {
@@ -86,7 +69,7 @@
         }
 
         /* 我的答案模块 */
-        .anself {
+        /* .anself {
             width: 275px;
             background-color: skyblue;
             border: 2px solid black;
@@ -94,7 +77,7 @@
             transform: translateX(146px) translateY(-67px);
             opacity: 0.5;
             /* display: none; */
-        }
+
 
         /* 悬停出现答案 */
         /* .but1：hover .anself{
@@ -114,17 +97,24 @@
         }
 
         /* 我的答案模块 */
-        .anself1 {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul li {
             margin-top: 100px;
             margin-left: 350px;
-            width: 275px;
+            width: 400px;
+            height: 150px;
             background-color: skyblue;
             border: 2px solid black;
             border-radius: 6px;
-            transform: translateX(464px) translateY(-229px);
-            /* opacity: 0.5; */
-            /* display: none; */
+        }
 
+        ul li img {
+            width: 100%;
+            height: 100%;
         }
 
         #back {
@@ -143,103 +133,32 @@
 
 <body>
     <button id="back">上一页</button>
-    <div class="loader">
-        <div class="loader-content">
-            <img src="../img/test-img/e4cd0639b5a5c1e164aeff4370ed2365.gif" alt="Loader" class="loader-loader" />
-        </div>
-    </div>
+
     <h1>
         前端小分队
     </h1>
     <div class="title">
         <p>自我检阅</p>
     </div>
-    <!-- 自己的答案 -->
-    <!-- <button class="but1">
-        <p>
-            我的答案
-        </p>
-    </button> -->
-    <!-- 答案内容 -->
-    <!-- <ul class="anself">
-        
-        <li>2 linear-gardient:</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
 
-    </ul> -->
-    <!-- 正确答案 -->
-    <!-- <button class="but2">
-        <p>
-           
-        </p>
-    </button> -->
-    <!-- 正确答案内容 -->
-    <ul class="anself1">
-        参考答案 <br>
-        <li>
-            <p>第三道题：</p> <br>
-            function fn(){ <br>
-            alert("朱雀"); <br>
-            } <br>
-            fn(); <br>
-        </li>
-        <li>
-            <p>第四道题：</p> <br>
-            let fn2=function(){ <br>
-            console.log("锦鲤"); <br>
-            } <br>
-            fn2();
-        </li>
-
-    </ul>
-    <ul class="anself1" style="position: absolute;left: -700px; top:290px">
-        参考答案 <br>
-        <li>
-            <p>第一道题：</p> <br>
-            let arr=[0,1,2,3,4]; <br>
-            console.log(arr[3]);
-        </li>
-        <li>
-            <p>第二道题：</p> <br>
-            let obj={<br>
-            names:"陈清",<br>
-            age:23,<br>
-            sex:"男",<br>
-            hobby:"电子游戏"<br>
-            }<br>
-            console.log(obj.sex)
-
-    </ul>
-    <ul class="anself1" style="position: absolute;left: 700px; top:290px">
-        参考答案 <br>
-        <li>
-            <p>第五道题：</p> <br>
-            sum = (age1 + age2 + age3 + age4) / 4; <br>
-            alert(sum)
-        </li>
-        <li>
-            <p>第六道题：</p> <br>
-            temp = teacherName; <br>
-            teacherName = age;<br>
-            age = temp;<br>
-            console.log(teacherName + "老师永远" + age)<br>
-        </li>
-
+    <ul>
+        <li><img src="./img/q1.png" alt=""></li>
+        <li><img src="./img/q2.png" alt=""></li>
+        <li><img src="./img/q3.png" alt=""></li>
+        <li><img src="./img/q4.png" alt=""></li>
+        <li><img src="./img/q5.png" alt=""></li>
+        <li><img src="./img/q6.png" alt=""></li>
     </ul>
 </body>
 <script>
     back.addEventListener("click", function () {
         window.history.back();
     })
-    window.onload = function () {
-        setTimeout(function () {
-            var loader = document.getElementsByClassName("loader")[0];
-            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
-            setTimeout(function () { loader.style.display = "none" }, 1000)
-        }, 2000)
-    }
+
+
+    //问题6
+    let arr = ["橘子", "香蕉", "苹果"];
+    console.log(arr.includes("橘子"));
 
 </script>
 

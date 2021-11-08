@@ -14,35 +14,6 @@
             background-color: rgb(244, 244, 244);
         }
 
-        .loader {
-            position: absolute;
-
-            z-index: 9999;
-            width: 100%;
-            height: 100%;
-            background: rgb(244, 244, 244);
-            text-align: center;
-            transition: opacity 1s ease;
-        }
-
-        .loader-content {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-        }
-
-        .fadeout {
-            opacity: 0;
-            filter: alpha(opacity=0);
-        }
-
-        @keyframes fadeInDown {
-            0% {
-                opacity: 0;
-            }
-        }
-
-
         .Completion {
             width: 1152px;
             height: 864px;
@@ -166,62 +137,50 @@
 </head>
 
 <body>
-    <div class="loader">
-        <div class="loader-content">
-            <img src="./img/3.gif" alt="Loader" class="loader-loader" />
-
-        </div>
-    </div>
 
     <div class="Completion">
         <h1>填空题</h2>
             <ol class="wrap">
 
                 <li class="Completion1">
-                    <p class="first">《例》你必须需要写</p>
-                    <input type="textarea" placeholder="display:flex">
-                    <p>开启弹性布局</p>
-                </li><br>
-                <p style="margin-left: 20px;font-weight: bolder;"> 上职通小学现在举办了一场唱歌王选举，我是考官，这时候我需要存储报名的同学的一些数据 <br></p>
-                <li class="Completion2">
-
-                    <p class="first">有1000个同学给我报年龄，我需要算出他们的平均年龄是多少，可一个个定义变量就为了写个年龄也太麻烦了吧，我应该用</p>
+                    <p class="first">Javascript的基本数据类型不包括</p>
                     <input type="textarea" placeholder="请在此填写答案">
-                    <p>来存储数据</p>
+                </li><br>
+                <!-- <p style="margin-left: 20px;font-weight: bolder;"> 上职通小学现在举办了一场唱歌王选举，我是考官，这时候我需要存储报名的同学的一些数据 <br></p> -->
+                <li class="Completion2">
+                    <p class="first">在HTML页面上编写JavaScript代码时，应写在</p>
+                    <input type="textarea" placeholder="请在此填写答案">
+                    <p>标签中间</p>
                 </li><br>
                 <li class="Completion3">
-                    <p class="first">第二天，领导告知我还需要保存1000个同学们分别的年龄，性别，名字，爱好时，我发现有好多数据类型，我应该用 </p>
+                    <p class="first">splice（）方法添加参数分别是
+                        <input type="textarea" placeholder="请在此填写答案">返回值是
+                    </p>
                     <input type="textarea" placeholder="请在此填写答案">
-                    <p>来存储数据</p>
                 </li><br>
                 <li class="Completion4">
-                    <p class="first">我可以使用 </p>
-                    <input type="textarea" placeholder="请在此填写答案">
-                    <p>标签放入视频，</p>
-                    <input type="textarea" placeholder="请在此填写答案">
-                    <p>标签放入音频</p>
+                    <p class="first">数组[1.2.3.4]转换[4.3.2.1]使用<input type="textarea" placeholder="请在此填写答案">方法？</p>
                 </li><br>
                 <li class="Completion5">
-                    <p class="first">有个同学失忆了，忘记了自己的一些信息，但是也想参加比赛，答应明天找回个人信息来参赛，那我可以暂时把他的档案设置为</p>
-                    <input type="textarea" placeholder="请在此填写答案">
-               
+                    <p class="first">数组[1,5,9,11,18,2,]使用<input type="textarea" placeholder="请在此填写答案">排序[1,2,5,9,11,18]
+                    </p>
+
                 </li>
                 <li class="Completion5">
-                    <p class="first"> 我会给每个通过了第一轮选举同学的档案内部写个pass的属性名，我应该用</p>
-                    <input type="textarea" placeholder="请在此填写答案">
-                    <p>型数据来写他的值方便之后判断是否通过</p>
+                    <p class="first"> forEach（）方法使用<input type="textarea" placeholder="请在此填写答案">函数，参数是<input
+                            type="textarea" placeholder="请在此填写答案"></p>
                 </li>
 
             </ol>
             <button class="btn">查看答案</button>
             <div class="ans">
                 <P>
-                    1.display:flex <br>
-                    2. array/数组 <br>
-                    3. object/对象 <br>
-                    4. video, audio <br>
-                    5. null<br>
-                    6. boolean/布尔 <br>
+                    1.数组<br>
+                    2.script<br>
+                    3. 下标，截取长度，替换项||截取的后的数据<br>
+                    4. reverse <br>
+                    5. sort<br>
+                    6. 箭头、函数或者回调函数||数据项、索引值、数组本身<br>
                     (以上仅代表个人观点，不喜勿喷，只是为了让还没完全懂的同学们理解一些知识点可能在什么地方用上)
                 </P>
             </div>
@@ -250,13 +209,7 @@
 </body>
 <script>
 
-    window.onload = function () {
-        setTimeout(function () {
-            var loader = document.getElementsByClassName("loader")[0];
-            loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
-            setTimeout(function () { loader.style.display = "none" }, 2000)
-        }, 2000)
-    }
+
     var btn = document.querySelector("button");
     var ans = document.querySelector(".ans");
     let flag = true;

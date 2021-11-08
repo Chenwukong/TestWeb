@@ -13,35 +13,6 @@
             background: url(./img/2.gif) no-repeat center/cover;
         }
 
-        .loader {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 9999;
-            width: 100%;
-            height: 12000px;
-            background: rgb(252, 253, 222);
-            text-align: center;
-            transition: opacity 1s ease;
-        }
-
-        .loader-content {
-            position: absolute;
-            top: 300px;
-            left: 750px;
-        }
-
-        .fadeout {
-            opacity: 0;
-            filter: alpha(opacity=0);
-        }
-
-        @keyframes fadeInDown {
-            0% {
-                opacity: 0;
-            }
-        }
-
         .choice {
             width: 1000px;
             margin-left: 100px;
@@ -89,89 +60,6 @@
         /* .bigbox>div{
     border-bottom: 1px red solid;
 } */
-        .box1 {
-            width: 200px;
-            height: 180px;
-            float: left;
-            background: url(./img/西游img/wk.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 0px;
-            position: absolute;
-            left: 0px;
-            /* transition: 4s; */
-            animation: wk 1s steps(8) infinite;
-        }
-
-        .box2 {
-            width: 200px;
-            height: 180px;
-            float: left;
-            background: url(./img/西游img/west_02_47bad19.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 0px;
-            position: absolute;
-            left: 200px;
-            /* transition: 4s; */
-            animation: bj 1s steps(8) infinite;
-        }
-
-        .box3 {
-            width: 200px;
-            height: 262px;
-            float: left;
-            background: url(./img/西游img/xz.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 0px;
-            background-size: 1600px;
-            position: absolute;
-            top: -53px;
-            left: 400px;
-            /* transition: 4s; */
-            animation: xz 1s steps(8) infinite;
-        }
-
-        .box4 {
-            width: 200px;
-            height: 180px;
-            float: left;
-            background: url(./img/西游img/wj.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-size: 1600px;
-            background-position: 0px;
-            position: absolute;
-            left: 600px;
-            /* transition: 4s; */
-            animation: wj 1s steps(8) infinite;
-        }
-
-        @keyframes wk {
-            100% {
-                background-position: -1600px;
-            }
-        }
-
-        @keyframes bj {
-            100% {
-                background-position: -1600px;
-            }
-        }
-
-        @keyframes xz {
-            100% {
-                background-position: -1600px;
-            }
-        }
-
-        @keyframes wj {
-            100% {
-                background-position: -1600px;
-            }
-        }
-
         .check {
             width: 80px;
             margin-left: 850px;
@@ -186,17 +74,7 @@
 <p></p>
 
 <body>
-    <div class="loader">
-        <div class="loader-content">
-            <!-- 没啥用，装饰页面 -->
-            <div class="bigbox">
-                <div class="box1"></div>
-                <div class="box2"></div>
-                <div class="box3"></div>
-                <div class="box4"></div>
-            </div>
-        </div>
-    </div>
+
     <form class="choice" action="" method="" name="login" target="">
         <h1>选择题</h1>
 
@@ -224,7 +102,7 @@
         <input type="radio" class="choice3" id="tow3" name="option2" onclick="fang2('这里面C')">
         <label for="tow3" class="correct">z==n</label><br>
         <input type="radio" class="choice4" id="tow4" name="option2" onclick="fang2('这里面D')">
-        <label for="tow4" >x===n</label><br>
+        <label for="tow4">x===n</label><br>
         <!-- <input type="button" value="重答" onclick="newopen2()"> -->
 
         <!-- 第三题 -->
@@ -239,7 +117,7 @@
             以上代码中的两次打印结果分别输出什么值？</p>
         <!-- <input type="text" id="xian3" name="xianshi"><br> -->
         <input type="radio" class="choice1 correct" id="three1" name="option3" onclick="fang3('这里面A')">
-        <label for="three1" >[4,44],[4]</label><br>
+        <label for="three1">[4,44],[4]</label><br>
         <input type="radio" class="choice2" id="three2" name="option3" onclick="fang3('这里面B')">
         <label for="three2">[4],[4]</label><br>
         <input type="radio" class="choice3" id="three3" name="option3" onclick="fang3('这里面C')">
@@ -271,7 +149,7 @@
         <input type="radio" class="choice2" name="option5" id="five2" onclick="fang5('这里面B')">
         <label for="five2">作为对象的方法</label><br>
         <input type="radio" class="choice3" name="option5" id="five3" onclick="fang5('这里面C')">
-        <label for="five3"  class="correct">作为数组来间接调用</label><br>
+        <label for="five3" class="correct">作为数组来间接调用</label><br>
         <input type="radio" class="choice4 " name="option5" id="five4" onclick="fang5 ('这里面D')">
         <label for="five4">作为对象的构造函数</label><br>
         <!-- <input type="button" value="重答" onclick="newopen5()"> -->
@@ -283,7 +161,7 @@
         <input type="radio" class="choice1" name="option6" onclick="fang6('这里面A')">
         <label for="">\b</label><br>
         <input type="radio" class="choice2" name="option6" onclick="fang6('这里面B')">
-        <label for=""  class="correct">\n</label><br>
+        <label for="" class="correct">\n</label><br>
         <input type="radio" class="choice3" name="option6" onclick="fang6('这里面C')">
         <label for="">\`</label><br>
         <input type="radio" class="choice4" name="option6" onclick="fang6('这里面D')">
@@ -297,36 +175,36 @@
         <input type="radio" class="choice2" name="option7" onclick="fang7('这里面B')">
         <label for="">数组本身</label><br>
         <input type="radio" class="choice3" name="option7" onclick="fang7('这里面C')">
-        <label for=""  class="correct">索引值</label><br>
+        <label for="" class="correct">索引值</label><br>
         <input type="radio" class="choice4" name="option7" onclick="fang7('这里面D')">
         <label for="">数组长度</label><br>
 
         <!-- 第八题 -->
         <p><span>8、
-            let b=4 <br>
-            functiom fn(b=5){<br>
-            functiom fn1(b){<br>
-            console.log(b);}<br>
+                let b=4 <br>
+                function fn(b=5){<br>
+                function fn1(b){<br>
+                console.log(b);}<br>
 
-            fn1() <br>
-            console.log(b)
-            }
-            <br>
-            fn() <br>
-           以上代码输出什么结果？</span>
+                fn1() <br>
+                console.log(b)
+                }
+                <br>
+                fn() <br>
+                以上代码输出什么结果？</span>
 
-    </p>
-    <!-- 这是显示框 -->
-    <!-- <input type="text" id="xian1" name="xianshi"> <br> -->
-    <input type="radio" class="choice1 " id="one1" name="option8" onclick="fang8('A')">
-    <label for="one1">4,6</label><br>
-    <input type="radio" class="choice2" id="one2" name="option8" onclick="fang8('B')">
-    <label for="one2">6,6</label><br>
-    <input type="radio" class="choice3 " id="one3" name="option8" onclick="fang8('C')">
-    <label for="one3" >5,6</label><br>
-    <input type="radio" class="choice4" id="one4" name="option8" onclick="fang8('D')">
-    <label for="one4"  class="correct"> undefined,6 </label><br>
-    <input type="button" value="重答" onclick="newopen()">
+        </p>
+        <!-- 这是显示框 -->
+        <!-- <input type="text" id="xian1" name="xianshi"> <br> -->
+        <input type="radio" class="choice1 " id="one1" name="option8" onclick="fang8('A')">
+        <label for="one1">4,6</label><br>
+        <input type="radio" class="choice2" id="one2" name="option8" onclick="fang8('B')">
+        <label for="one2">6,6</label><br>
+        <input type="radio" class="choice3 " id="one3" name="option8" onclick="fang8('C')">
+        <label for="one3">5,6</label><br>
+        <input type="radio" class="choice4" id="one4" name="option8" onclick="fang8('D')">
+        <label for="one4" class="correct"> undefined,6 </label><br>
+        <input type="button" value="重答" onclick="newopen()">
 
         <div class="function">
             <a href="../index/index.html">首页</a>
@@ -340,6 +218,14 @@
     <button class="check">查看答案</button>
 
     <script>
+        let a = [4];
+        let b = a;
+        a = [4, 44]
+        console.log(b);
+        a = b;
+        b.push(44);
+        console.log(a)
+
         var cor = document.querySelectorAll(".correct")
         var btn = document.querySelector(".check");
         btn.addEventListener("click", function () {
@@ -349,76 +235,66 @@
             }
         })
 
-        window.onload = function () {
-            setTimeout(function () {
-                var loader = document.getElementsByClassName("loader")[0];
-                loader.className = "loader fadeout";//使用渐隐的方法淡出loading page
-                setTimeout(function () { loader.style.display = "none" }, 1000)
-            }, 1500)
-        }
 
+        // function fang1(shu) {
+        //     var txt = document.getElementById("xian1").value;
+        //     if (txt == "0") {
+        //         document.getElementById("xian1").value = shu;
+        //     }
+        // }
+        // function newopen1() {
+        //     document.getElementById("xian1").value = "";
+        // }
 
+        // function fang2(shu) {
+        //     var txt = document.getElementById("xian2").value;
+        //     if (txt == "0") {
+        //         document.getElementById("xian2").value = shu;
+        //     }
+        // }
+        // function newopen2() {
+        //     document.getElementById("xian2").value = "";
+        // }
 
-        function fang1(shu) {
-            var txt = document.getElementById("xian1").value;
-            if (txt == "0") {
-                document.getElementById("xian1").value = shu;
-            }
-        }
-        function newopen1() {
-            document.getElementById("xian1").value = "";
-        }
+        // function fang3(shu) {
+        //     var txt = document.getElementById("xian3").value;
+        //     if (txt == "0") {
+        //         document.getElementById("xian3").value = shu;
+        //     }
+        // }
+        // function newopen3() {
+        //     document.getElementById("xian3").value = "";
+        // }
 
-        function fang2(shu) {
-            var txt = document.getElementById("xian2").value;
-            if (txt == "0") {
-                document.getElementById("xian2").value = shu;
-            }
-        }
-        function newopen2() {
-            document.getElementById("xian2").value = "";
-        }
+        // function fang3(shu) {
+        //     var txt = document.getElementById("xian3").value;
+        //     if (txt == "0") {
+        //         document.getElementById("xian3").value = shu;
+        //     }
+        // }
+        // function newopen3() {
+        //     document.getElementById("xian3").value = "";
+        // }
 
-        function fang3(shu) {
-            var txt = document.getElementById("xian3").value;
-            if (txt == "0") {
-                document.getElementById("xian3").value = shu;
-            }
-        }
-        function newopen3() {
-            document.getElementById("xian3").value = "";
-        }
+        // function fang4(shu) {
+        //     var txt = document.getElementById("xian4").value;
+        //     if (txt == "0") {
+        //         document.getElementById("xian4").value = shu;
+        //     }
+        // }
+        // function newopen4() {
+        //     document.getElementById("xian4").value = "";
+        // }
 
-        function fang3(shu) {
-            var txt = document.getElementById("xian3").value;
-            if (txt == "0") {
-                document.getElementById("xian3").value = shu;
-            }
-        }
-        function newopen3() {
-            document.getElementById("xian3").value = "";
-        }
-
-        function fang4(shu) {
-            var txt = document.getElementById("xian4").value;
-            if (txt == "0") {
-                document.getElementById("xian4").value = shu;
-            }
-        }
-        function newopen4() {
-            document.getElementById("xian4").value = "";
-        }
-
-        function fang5(shu) {
-            var txt = document.getElementById("xian5").value;
-            if (txt == "0") {
-                document.getElementById("xian5").value = shu;
-            }
-        }
-        function newopen5() {
-            document.getElementById("xian5").value = "";
-        }
-
+        // function fang5(shu) {
+        //     var txt = document.getElementById("xian5").value;
+        //     if (txt == "0") {
+        //         document.getElementById("xian5").value = shu;
+        //     }
+        // }
+        // function newopen5() {
+        //     document.getElementById("xian5").value = "";
+        // }
 
 
     </script>
